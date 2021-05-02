@@ -16,7 +16,8 @@ export default {
         {
             name: 'main_image',
             title: 'Main Image',
-            type: 'mainImage'
+            type: 'mainImage',
+            description: 'Main (large resolution) image'
         },
         {
             title: 'Author',
