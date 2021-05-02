@@ -19,8 +19,6 @@ export default {
             of: [{ type: 'imageTextPairObj' }],
             options: {
                 layout: 'grid',
-
-
             }
         },
         {
