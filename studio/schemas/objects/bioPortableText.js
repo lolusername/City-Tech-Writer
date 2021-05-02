@@ -1,7 +1,7 @@
 export default {
     name: 'bioPortableText',
     type: 'array',
-    title: 'Excerpt',
+    title: 'Rich Text',
     of: [{
             title: 'Block',
             type: 'block',
@@ -18,6 +18,10 @@ export default {
         {
             type: 'mainImage',
             tite: "img"
+        },
+        {
+            type: 'youtubeLink',
+            tite: "Youtube Video"
         }
     ]
 }

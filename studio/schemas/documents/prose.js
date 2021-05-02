@@ -1,7 +1,7 @@
 export default {
     type: 'document',
     name: 'prose',
-    title: 'Prose',
+    title: 'Prose/Poetry (Rich Text)',
     fields: [{
             name: 'title',
             type: 'string',

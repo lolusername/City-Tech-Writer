@@ -16,6 +16,8 @@ import mainImage from './objects/mainImage'
 import bioPortableText from './objects/bioPortableText'
 import socials from './objects/socials'
 import imageTextPairObj from './objects/imageTextPair'
+import youtubeLink from './objects/youtubeLink'
+import youtubeDocument from './documents/youtubeDocument'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +32,8 @@ export default createSchema({
         imageGallery,
         textPairedImages,
         author,
+        youtubeDocument,
+
 
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
@@ -37,6 +41,7 @@ export default createSchema({
         bioPortableText,
         socials,
         imageTextPairObj,
+        youtubeLink
 
     ])
 })
