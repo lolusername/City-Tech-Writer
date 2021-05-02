@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document types
 import prose from './documents/prose'
 import author from './documents/author'
+import imageGallery from './documents/imageGallery'
+import textPairedImages from './documents/textPairedImages'
 
 
 // Object types
@@ -24,6 +26,8 @@ export default createSchema({
         // The following are document types which will appear
         // in the studio.
         prose,
+        imageGallery,
+        textPairedImages,
         author,
 
         // When added to this list, object types can be used as
@@ -31,8 +35,6 @@ export default createSchema({
         mainImage,
         bioPortableText,
         socials
-
-
 
     ])
 })
