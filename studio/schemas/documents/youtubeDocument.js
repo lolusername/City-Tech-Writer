@@ -1,7 +1,7 @@
 export default {
     type: "document",
     name: "youtube",
-    title: "Youtube",
+    title: "Stand-alone Youtube Video",
     fields: [{
             name: 'title',
             type: 'string',
