@@ -16,13 +16,7 @@ export default {
             name: 'imageTextPair',
             type: 'array',
             title: 'Image Text Pair',
-            of: [{
-                type: 'object',
-                fields: [
-                    { type: 'image', name: 'image', title: 'Image' },
-                    { type: 'bioPortableText', name: 'text', title: 'text' },
-                ],
-            }],
+            of: [{ type: 'imageTextPairObj' }],
             options: {
                 layout: 'grid',
 

@@ -15,6 +15,7 @@ import textPairedImages from './documents/textPairedImages'
 import mainImage from './objects/mainImage'
 import bioPortableText from './objects/bioPortableText'
 import socials from './objects/socials'
+import imageTextPairObj from './objects/imageTextPair'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,7 +35,8 @@ export default createSchema({
         // { type: 'typename' } in other document schemas
         mainImage,
         bioPortableText,
-        socials
+        socials,
+        imageTextPairObj,
 
     ])
 })
