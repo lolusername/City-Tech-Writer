@@ -18,7 +18,7 @@ export default {
             type: 'array',
             title: 'Images',
             of: [
-                { type: 'image' }
+                { type: 'imageCaption' }
             ]
         },
         {

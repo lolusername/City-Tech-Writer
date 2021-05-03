@@ -20,6 +20,7 @@ import youtubeLink from './objects/youtubeLink'
 import tags from './objects/tags'
 import isHidden from './objects/isHidden'
 import multimediaLink from './objects/multimediaLink'
+import imageCaption from './objects/imageCaption'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -47,7 +48,8 @@ export default createSchema({
         imageTextPairObj,
         youtubeLink,
         isHidden,
-        multimediaLink
+        multimediaLink,
+        imageCaption
 
     ])
 })
