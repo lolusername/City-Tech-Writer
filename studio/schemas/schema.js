@@ -9,6 +9,7 @@ import prose from './documents/prose'
 import author from './documents/author'
 import imageGallery from './documents/imageGallery'
 import textPairedImages from './documents/textPairedImages'
+import youtubeDocument from './documents/youtubeDocument'
 
 
 // Object types
@@ -17,7 +18,10 @@ import bioPortableText from './objects/bioPortableText'
 import socials from './objects/socials'
 import imageTextPairObj from './objects/imageTextPair'
 import youtubeLink from './objects/youtubeLink'
-import youtubeDocument from './documents/youtubeDocument'
+import tags from './objects/tags'
+import isHidden from './objects/isHidden'
+import multimediaLink from './objects/multimediaLink'
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,6 +37,7 @@ export default createSchema({
         textPairedImages,
         author,
         youtubeDocument,
+        tags,
 
 
         // When added to this list, object types can be used as
@@ -41,7 +46,9 @@ export default createSchema({
         bioPortableText,
         socials,
         imageTextPairObj,
-        youtubeLink
+        youtubeLink,
+        isHidden,
+        multimediaLink
 
     ])
 })

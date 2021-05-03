@@ -22,11 +22,22 @@ export default {
             }
         },
         {
-            title: 'Author',
-            name: 'author',
-            type: 'reference',
-            to: [{ type: 'author' }]
+            title: 'Author(s)',
+            name: 'authors',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'author' }] }, ]
+        },
+        {
+            title: 'Tags',
+            name: 'tags',
+            type: 'tags',
+        },
+        {
+            title: 'Is Hidden',
+            name: 'isHidden',
+            type: 'isHidden',
         },
 
-    ]
+    ],
+    initialValue: { isHidden: true },
 }

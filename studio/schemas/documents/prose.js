@@ -19,31 +19,31 @@ export default {
             type: 'mainImage',
             description: 'Main (large resolution) image'
         },
+
         {
-            title: 'Author',
-            name: 'author',
-            type: 'reference',
-            to: [{ type: 'author' }]
+            title: 'Author(s)',
+            name: 'authors',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'author' }] }, ]
         },
         {
-            name: 'tags',
             title: 'Tags',
-            type: 'array',
-            of: [{
-                type: 'string',
+            name: 'tags',
+            type: 'tags',
+        },
+        {
+            title: 'Is Hidden',
+            name: 'isHidden',
+            type: 'isHidden',
+        },
+        {
+            title: 'Multimedia Link',
+            name: 'multimediaLink',
+            type: 'multimediaLink',
+        },
 
-            }, ],
-            options: {
-                list: [
-                    { title: 'Personal narratives', value: 'personal_narratives' },
-                    { title: 'Fictions and fictional analysis', value: 'fiction' },
-                    { title: 'Art and architectural criticism ', value: 'art_crit' },
-                    { title: 'Technology: Past, Present, Future', value: 'tech' }
-                ]
-            }
-        }
     ],
-
+    initialValue: { isHidden: true },
     preview: {
         select: {
             title: 'title',
