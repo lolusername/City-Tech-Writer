@@ -13,7 +13,9 @@ export default {
             { title: 'Art and architectural criticism ', value: 'art_crit' },
             { title: 'Philosophy ', value: 'philosophy' },
             { title: 'Reflections On Healthcare ', value: 'reflections_healthcare' },
-            { title: 'Technology: Past, Present, Future', value: 'tech' }
+            { title: 'Technology: Past, Present, Future', value: 'tech' },
+            { title: 'Sociological Inquiry', value: 'soc' },
+            { title: 'Science and Biology', value: 'sci_bi' },
         ]
     }
 }

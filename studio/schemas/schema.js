@@ -21,6 +21,7 @@ import tags from './objects/tags'
 import isHidden from './objects/isHidden'
 import multimediaLink from './objects/multimediaLink'
 import imageCaption from './objects/imageCaption'
+import mp3 from './objects/mp3'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -38,6 +39,7 @@ export default createSchema({
         author,
         youtubeDocument,
         tags,
+        mp3,
 
 
         // When added to this list, object types can be used as

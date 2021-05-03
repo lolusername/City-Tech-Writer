@@ -5,5 +5,6 @@ export default {
     fields: [
         { type: 'image', name: "imageForCaption", title: "Image for Caption" },
         { type: 'string', name: "caption", title: "Caption" },
+        { type: 'string', name: "altText", title: "Alt Text" },
     ]
 }
