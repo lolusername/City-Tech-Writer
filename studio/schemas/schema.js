@@ -7,8 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import prose from './documents/prose'
 import author from './documents/author'
 import imageGallery from './documents/imageGallery'
-import textPairedImages from './documents/textPairedImages'
-import youtubeDocument from './documents/youtubeDocument'
+// import textPairedImages from './documents/textPairedImages'
+// import youtubeDocument from './documents/youtubeDocument'
 import issueInfo from './documents/issueInfo'
 
 
@@ -23,7 +23,6 @@ import isHidden from './objects/isHidden'
 import multimediaLink from './objects/multimediaLink'
 import imageCaption from './objects/imageCaption'
 import mp3 from './objects/mp3'
-import allDocs from './documents/allDocs'
 
 
 
@@ -38,13 +37,12 @@ export default createSchema({
         // in the studio.
         prose,
         imageGallery,
-        textPairedImages,
+        // textPairedImages,
         author,
-        youtubeDocument,
+        // youtubeDocument,
         tags,
         mp3,
         issueInfo,
-        allDocs,
 
 
         // When added to this list, object types can be used as
