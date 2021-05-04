@@ -37,11 +37,6 @@ export default {
             type: 'isHidden',
         },
         {
-            title: 'Auto-generated MP3(s)',
-            name: 'multimediaLink',
-            type: 'multimediaLink',
-        },
-        {
             name: "order",
             title: "Order",
             type: "number",

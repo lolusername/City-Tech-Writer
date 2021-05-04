@@ -22,6 +22,10 @@ export default {
         {
             type: 'youtubeLink',
             tite: "Youtube Video"
+        },
+        {
+            type: 'mp3',
+            tite: "Auto Generated MP3"
         }
     ]
 }
