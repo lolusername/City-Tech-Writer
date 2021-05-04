@@ -23,6 +23,7 @@ import isHidden from './objects/isHidden'
 import multimediaLink from './objects/multimediaLink'
 import imageCaption from './objects/imageCaption'
 import mp3 from './objects/mp3'
+import allDocs from './documents/allDocs'
 
 
 
@@ -43,6 +44,7 @@ export default createSchema({
         tags,
         mp3,
         issueInfo,
+        allDocs,
 
 
         // When added to this list, object types can be used as
