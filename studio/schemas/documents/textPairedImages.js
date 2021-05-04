@@ -33,6 +33,12 @@ export default {
             type: 'tags',
         },
         {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
+        {
             title: 'Is Hidden',
             name: 'isHidden',
             type: 'isHidden',
