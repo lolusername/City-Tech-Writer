@@ -24,6 +24,12 @@ export default {
             name: 'isHidden',
             type: 'isHidden',
         },
+        {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
 
     ],
     initialValue: { isHidden: true },

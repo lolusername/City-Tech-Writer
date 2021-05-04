@@ -8,6 +8,12 @@ export default {
             type: 'string',
         },
         {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
+        {
             name: 'description',
             description: 'Description of photos or image set',
             type: 'bioPortableText',

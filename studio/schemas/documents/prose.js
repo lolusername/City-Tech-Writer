@@ -41,8 +41,15 @@ export default {
             name: 'multimediaLink',
             type: 'multimediaLink',
         },
+        {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
 
     ],
+
     initialValue: { isHidden: true },
     preview: {
         select: {
