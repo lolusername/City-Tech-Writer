@@ -16,6 +16,7 @@ export default {
             { title: 'Technology: Past, Present, Future', value: 'tech' },
             { title: 'Sociological Inquiry', value: 'soc' },
             { title: 'Science and Biology', value: 'sci_bi' },
+            { title: 'Photography', value: 'photo' },
         ]
     }
 }
