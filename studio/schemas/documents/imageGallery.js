@@ -14,6 +14,11 @@ export default {
             hidden: true,
         },
         {
+            title: 'Faculty Sponsor',
+            name: 'facultySponsor',
+            type: 'string',
+        },
+        {
             name: 'description',
             description: 'Description of photos or image set',
             type: 'bioPortableText',

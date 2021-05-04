@@ -13,6 +13,11 @@ export default {
             title: 'Photo'
         },
         {
+            title: 'Faculty Sponsor',
+            name: 'facultySponsor',
+            type: 'string',
+        },
+        {
             name: 'socials',
             type: 'array',
             title: 'Social Media',

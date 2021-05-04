@@ -37,6 +37,11 @@ export default {
             type: 'isHidden',
         },
         {
+            title: 'Faculty Sponsor',
+            name: 'facultySponsor',
+            type: 'string',
+        },
+        {
             name: "order",
             title: "Order",
             type: "number",
