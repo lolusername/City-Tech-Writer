@@ -1,7 +1,16 @@
 <template>
   <section class="container">
-    <div v-for="(doc, i) in sortedDocs" :key="i">
-      <h6>{{ doc.title }}</h6>
+    <div class="row">
+      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-6">
+        <div class="row">
+          <section class="col-5">
+            <img :src="extractImage(doc.prose_content)" class="w-100" alt="" />
+          </section>
+          <section class="col-7">
+            <h6>{{ doc.title }}</h6>
+          </section>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -10,6 +19,10 @@
 import { dateFilter } from 'vue-date-fns'
 
 import sanityClient from '../sanityClient'
+
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(sanityClient)
 
 const proseQuery = `
   {
@@ -23,7 +36,6 @@ const imageGalleryQuery = `
 `
 
 export default {
-  components: {},
   filters: {
     dateFilter
   },
@@ -39,6 +51,17 @@ export default {
     const imageGalleries = await sanityClient.fetch(imageGalleryQuery)
 
     return { ...prose, ...imageGalleries }
+  },
+  methods: {
+    extractImage(blocks = []) {
+      const imgObject = blocks.find(block => {
+        return block._type == 'mainImage'
+      })
+      if (imgObject === undefined) return
+      console.log(imgObject.asset)
+
+      return builder.image(imgObject)
+    }
   },
   mounted() {
     this.sortedDocs = this.prose.slice()
