@@ -8,14 +8,22 @@
     >
       <div class="col-10">
         <div class="row p-3 doc m-1">
-          <section v-if="extractImage(doc.prose_content)" class="col-3 px-0">
+          <section v-if="extractImage(doc.prose_content)" class="col-4 py-2">
             <img :src="extractImage(doc.prose_content)" class="w-100" alt="" />
           </section>
-          <section class="col">
-            <h5>{{ doc.title }}</h5>
-            <p v-for="(author, i) in doc.authors" :key="i">
-              {{ author.name }}
-            </p>
+          <section class="col d-flex justify-content-between">
+            <div>
+              <h5>{{ doc.title }}</h5>
+              <div v-for="(author, i) in doc.authors" :key="i" class="h6">
+                {{ author.name }}
+              </div>
+            </div>
+            <div class="sponsor col-5 text-right pr-0">
+              <h6>FACULTY SPONSOR(S)</h6>
+              <div>
+                {{ doc.facultySponsor }}
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -36,7 +44,8 @@ const proseQuery = `
   {
     "prose": *[_type in ["prose"]] | order(order asc) {
       ...,
-       authors[]->
+       authors[]->,
+       facultySponsor
     }
   }
 `
@@ -104,63 +113,37 @@ export default {
 <style scoped>
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
-
+@import url('https://use.typekit.net/fmp2wuw.css');
 .container {
   padding: 1.5rem 0;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
-}
+  font-family: adobe-garamond-pro, serif;
 
+  font-weight: 400;
+
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
 .header {
   padding: 0 1.5rem;
   text-align: center;
 }
+.sponsor h6 {
+  font-size: 0.67rem;
+}
 .doc {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
-.title + p + .dates {
-  margin-bottom: 0;
-  font-weight: 600;
-}
-
-.title + p + .dates + .venue {
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
-  margin-bottom: 5rem;
-}
-
-figure {
-  margin: 0 0 3em;
-}
-
-figcaption {
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
-  padding: 0.25rem 1.5rem;
-}
-
-.mainImage {
-  width: 100%;
-  vertical-align: top;
-}
-
-.sessionListTitle {
-  text-align: center;
-  font-weight: 600;
-  font-size: var(--font-title2-size);
-  line-height: var(--font-title2-line-height);
-  margin: 0 0 3rem;
-
-  @media (--media-min-medium) {
-    font-size: var(--font-title1-size);
-    line-height: var(--font-title1-line-height);
-  }
-}
-
-.sessionListContainer {
-  max-width: var(--width-small);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  box-sizing: border-box;
+.doc img {
+  border: 0.5px solid #000;
+  border-radius: 4px;
 }
 </style>
