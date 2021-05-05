@@ -1,22 +1,19 @@
 <template>
   <div>
-    <Navbar
-      :title="$store.state.eventInformation.name"
-      :ticket-link="$store.state.eventInformation.ticket"
-    />
+    <Navbar :title="'CTW'" />
     <nuxt />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
 import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
+// import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Navbar,
-    Footer
+    Navbar
+    // Footer
   }
 }
 </script>

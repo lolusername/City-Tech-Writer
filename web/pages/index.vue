@@ -1,13 +1,21 @@
 <template>
   <section class="container">
-    <div class="row">
-      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-12 ">
+    <div
+      v-for="(doc, i) in sortedDocs"
+      :key="i"
+      class="row py-2"
+      :class="{ 'justify-content-end': i % 2 }"
+    >
+      <div class="col-10">
         <div class="row p-3 doc m-1">
           <section v-if="extractImage(doc.prose_content)" class="col-3 px-0">
             <img :src="extractImage(doc.prose_content)" class="w-100" alt="" />
           </section>
           <section class="col">
-            <h6>{{ doc.title }}</h6>
+            <h5>{{ doc.title }}</h5>
+            <p v-for="(author, i) in doc.authors" :key="i">
+              {{ author.name }}
+            </p>
           </section>
         </div>
       </div>
@@ -26,7 +34,10 @@ const builder = imageUrlBuilder(sanityClient)
 
 const proseQuery = `
   {
-    "prose": *[_type in ["prose"]] | order(order asc) 
+    "prose": *[_type in ["prose"]] | order(order asc) {
+      ...,
+       authors[]->
+    }
   }
 `
 const imageGalleryQuery = `
