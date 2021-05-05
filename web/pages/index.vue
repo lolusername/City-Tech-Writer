@@ -1,12 +1,12 @@
 <template>
   <section class="container">
     <div class="row">
-      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-6 my-4 doc">
-        <div class="row p-4">
-          <section v-if="extractImage(doc.prose_content)" class="col-5 px-0">
+      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-12 ">
+        <div class="row p-3 doc m-1">
+          <section v-if="extractImage(doc.prose_content)" class="col-3 px-0">
             <img :src="extractImage(doc.prose_content)" class="w-100" alt="" />
           </section>
-          <section class="col-7">
+          <section class="col">
             <h6>{{ doc.title }}</h6>
           </section>
         </div>
