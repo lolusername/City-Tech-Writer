@@ -76,7 +76,7 @@ export default {
   },
   mounted() {
     this.sortedDocs = this.prose.slice()
-    this.sortedDocs.splice(33, 0, ...this.imageGalleries)
+    this.sortedDocs.splice(34, 0, ...this.imageGalleries)
   },
   head() {
     if (!this || !this.info) {
