@@ -1,6 +1,8 @@
 <template>
   <section class="container">
-    test
+    <div v-for="(doc, i) in sortedDocs" :key="i">
+      <h6>{{ doc.title }}</h6>
+    </div>
   </section>
 </template>
 
@@ -9,9 +11,14 @@ import { dateFilter } from 'vue-date-fns'
 
 import sanityClient from '../sanityClient'
 
-const query = `
+const proseQuery = `
   {
-    "docs": *[!(_type == "author")] 
+    "prose": *[_type in ["prose"]] | order(order asc) 
+  }
+`
+const imageGalleryQuery = `
+  {
+    "imageGalleries": *[_type in ["imageGallery"]] | order(order asc) 
   }
 `
 
@@ -22,11 +29,20 @@ export default {
   },
   data() {
     return {
-      program: this.$store.getters.getProgram
+      program: this.$store.getters.getProgram,
+      sortedDocs: []
     }
   },
+  computed: {},
   async asyncData() {
-    return await sanityClient.fetch(query)
+    const prose = await sanityClient.fetch(proseQuery)
+    const imageGalleries = await sanityClient.fetch(imageGalleryQuery)
+
+    return { ...prose, ...imageGalleries }
+  },
+  mounted() {
+    this.sortedDocs = this.prose.slice()
+    this.sortedDocs.splice(33, 0, ...this.imageGalleries)
   },
   head() {
     if (!this || !this.info) {
