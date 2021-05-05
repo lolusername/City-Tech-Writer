@@ -1,9 +1,9 @@
 <template>
   <section class="container">
     <div class="row">
-      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-6">
-        <div class="row">
-          <section class="col-5">
+      <div v-for="(doc, i) in sortedDocs" :key="i" class="col-6 my-4 doc">
+        <div class="row p-4">
+          <section v-if="extractImage(doc.prose_content)" class="col-5 px-0">
             <img :src="extractImage(doc.prose_content)" class="w-100" alt="" />
           </section>
           <section class="col-7">
@@ -104,7 +104,9 @@ export default {
   padding: 0 1.5rem;
   text-align: center;
 }
-
+.doc {
+  border: 2px solid #000;
+}
 .title + p + .dates {
   margin-bottom: 0;
   font-weight: 600;
