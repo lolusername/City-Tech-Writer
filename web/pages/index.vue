@@ -5,7 +5,7 @@
       <section class="issue-info container mb-5">
         <div class="row py-3 d-flex justify-content-center">
           <article class="col-3 volume">
-            <h4>City Tech Writer</h4>
+            <h1>City Tech Writer</h1>
             <h4>Vol. 16 - 2021</h4>
           </article>
           <article class="col-5">
@@ -215,15 +215,15 @@ export default {
   border-radius: 8px;
   border: 0.1px solid #000;
   box-shadow: #214971 10px 10px;
-  font-size: 1.5rem;
+  font-size: 1.39rem;
   font-weight: 100;
   font-style: italic;
 }
 
 .cover {
-  height: 440px;
+  height: 450px;
   background: url(/banner.png), #214971;
-  background-size: 34vw !important;
+  background-size: 35vw !important;
   background-repeat: no-repeat;
   background-position: center;
   transition: background 1s;
