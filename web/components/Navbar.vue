@@ -1,6 +1,8 @@
 <template>
-  <header class="header">
-    <nuxt-link to="/" class="home">{{ title }}</nuxt-link>
+  <header class="header d-flex justify-content-center">
+    <nuxt-link to="/" :class="{ thin: !$route.path == '/' }" class="home">{{
+      title
+    }}</nuxt-link>
     <nav></nav>
   </header>
 </template>
@@ -23,16 +25,20 @@ export default {
 <style scoped>
 @import '../styles/custom-properties.css';
 @import url('https://use.typekit.net/fmp2wuw.css');
+@import url('https://use.typekit.net/rbh5reg.css');
 header {
-  font-family: adobe-garamond-pro, serif;
+  font-family: gopher, adobe-garamond-pro, serif;
 }
 .header {
-  padding: 1.5rem;
+  padding: 0.7rem;
   max-width: var(--width-medium);
   box-sizing: border-box;
   margin: 0 auto;
+  font-size: 1.34rem;
 }
-
+.home {
+  text-decoration: underline !important;
+}
 @media screen and (min-width: 520px) {
   .header {
     display: flex;
@@ -49,7 +55,9 @@ header {
     margin-left: 2rem;
   }
 }
-
+.thin {
+  font-weight: 600 !important;
+}
 .header a {
   display: block;
   color: inherit;
@@ -57,6 +65,6 @@ header {
 }
 
 .home {
-  font-weight: 600;
+  font-weight: 100;
 }
 </style>

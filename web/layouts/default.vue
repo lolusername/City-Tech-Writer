@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar :title="'Homepage'" />
+    <Navbar :title="'Table Of Contents'" />
     <nuxt />
     <!-- <Footer /> -->
   </div>
