@@ -287,7 +287,7 @@ h6 {
   .cover {
     background-position: center center;
     background-color: #214971;
-    background-size: 120% !important;
+    background-size: 134% !important;
   }
 }
 </style>
