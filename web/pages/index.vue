@@ -42,7 +42,9 @@
                 alt=""
               />
             </section>
-            <section class="col d-flex justify-content-between">
+            <section
+              class="col d-flex justify-content-between flex-column flex-md-row"
+            >
               <div>
                 <NuxtLink
                   v-if="doc._type == 'prose'"
@@ -61,7 +63,7 @@
               </div>
               <div
                 v-if="doc.facultySponsor"
-                class="sponsor col-5 text-right pr-0"
+                class="sponsor col col-md-5 text-md-right p-0 pr-md-0"
               >
                 <h6>FACULTY SPONSOR(S)</h6>
                 <div>
@@ -294,6 +296,9 @@ h6 {
     background-position: center center;
     background-color: #214971;
     background-size: 134% !important;
+  }
+  .tag {
+    font-size: 1rem;
   }
 }
 </style>
