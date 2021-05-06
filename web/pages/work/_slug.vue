@@ -71,7 +71,7 @@ export default {
 
 <style>
 @import '../../styles/custom-properties.css';
-* {
+a {
   white-space: pre-line;
 }
 .container {

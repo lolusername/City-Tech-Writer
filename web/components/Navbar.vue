@@ -39,7 +39,7 @@ header {
 .home {
   text-decoration: underline !important;
 }
-@media screen and (min-width: 520px) {
+@media screen and (max-width: 520px) {
   .header {
     display: flex;
     justify-content: space-between;
