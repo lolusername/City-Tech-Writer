@@ -47,6 +47,14 @@ export default {
             type: "number",
             hidden: true,
         },
+        {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+            }
+        }
 
     ],
 

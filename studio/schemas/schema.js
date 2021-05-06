@@ -54,7 +54,9 @@ export default createSchema({
         youtubeLink,
         isHidden,
         multimediaLink,
-        imageCaption
+        imageCaption,
+
+
 
     ])
 })

@@ -32,7 +32,10 @@
             </section>
             <section class="col d-flex justify-content-between">
               <div>
-                <h5>{{ doc.title }}</h5>
+                <NuxtLink :to="`work/${getSlug(doc)}`"
+                  ><h5>{{ doc.title }}</h5></NuxtLink
+                >
+
                 <div v-for="(author, i) in doc.authors" :key="i" class="h6">
                   {{ author.name }}
                 </div>
@@ -85,7 +88,8 @@ const proseQuery = `
       ...,
        authors[]->,
        facultySponsor,
-       tags
+       tags,
+       slug
     }
   }
 `
@@ -119,6 +123,9 @@ export default {
     return { ...prose, ...imageGalleries, ...issueInfo }
   },
   methods: {
+    getSlug(doc) {
+      return doc.slug ? doc.slug.current : ''
+    },
     extractImage(blocks = []) {
       const imgObject = blocks.find(block => {
         return block._type == 'mainImage'
