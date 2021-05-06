@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <a class="mp3-link" :href="build(mp3.asset)"
-      >Generated MP3 for <span>{{ mp3Name }}</span></a
-    >
+  <div class="d-flex justify-content-center">
+    <div>
+      <audio controls>
+        <source :src="build(mp3.asset)" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <h6>
+        Audio for <span class="mp3-link">{{ mp3Name }}</span>
+      </h6>
+    </div>
   </div>
 </template>
 <script>
@@ -27,7 +33,7 @@ export default {
       const id = a[1]
       const fileType = a[2]
 
-      return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}?dl`
+      return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}`
     }
   },
   props: {

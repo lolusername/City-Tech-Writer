@@ -69,6 +69,8 @@ export default {
   padding: 1.5rem 0;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
+  font-family: adobe-garamond-pro, serif;
+  font-size: 1.5rem;
 }
 
 .title {
