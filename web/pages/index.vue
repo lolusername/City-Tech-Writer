@@ -206,9 +206,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'City Tech Writer',
-        name: 'City Tech Writer',
-        content: 'Outstanding student writing from all disciplines'
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Outstanding student writing from all disciplines',
       }
     ]
   }
