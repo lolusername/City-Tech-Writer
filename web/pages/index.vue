@@ -1,6 +1,7 @@
 <template>
   <div>
     <header class="container-fluid p-0">
+      <div class="cover"></div>
       <section class="issue-info container mb-5 p-5 p-md-5">
         <div class="row py-3 d-flex justify-content-center">
           <article class="col-12 col-md-3">
@@ -252,7 +253,7 @@ export default {
 }
 
 .cover {
-  height: 450px;
+  height: 478px;
   background: url(/banner.png), #214971;
   background-size: 67vmin !important;
   background-repeat: no-repeat;
@@ -296,5 +297,12 @@ h6 {
 .doc img {
   border: 0.5px solid #000;
   border-radius: 4px;
+}
+@media (max-width: 576px) {
+  .cover {
+    background-position: center -1rem;
+    background-color: #214971;
+    background-size: cover !important;
+  }
 }
 </style>
