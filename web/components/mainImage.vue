@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <a class="mp3-link" :href="build(mp3.asset)"
-      >Generated MP3 for <span>{{ mp3Name }}</span></a
-    >
-  </div>
+  <img class="w-100 my-5" :src="getURL(asset)" :alt="alt" />
 </template>
 <script>
 import sanityClient from '../sanityClient'
 
 import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(sanityClient)
 
 export default {
   data() {
@@ -18,8 +16,6 @@ export default {
   },
   methods: {
     getURL(block) {
-      console.log(sanityClient)
-      const builder = imageUrlBuilder(sanityClient)
       return builder.image(block)
     },
     build({ _ref }) {
@@ -27,16 +23,16 @@ export default {
       const id = a[1]
       const fileType = a[2]
 
-      return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}?dl`
+      return `https://cdn.sanity.io/images/vnoqhn6d/production/${id}.${fileType}?dl`
     }
   },
   props: {
-    mp3: {
-      mp3: String,
+    alt: {
+      alt: String,
       default: () => ''
     },
-    mp3Name: {
-      mp3: String,
+    asset: {
+      asset: Object,
       default: () => ''
     }
   }
@@ -50,8 +46,5 @@ a {
 a:hover {
   text-decoration: underline;
   color: #000;
-}
-.mp3-link {
-  font-style: italic;
 }
 </style>

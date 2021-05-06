@@ -1,8 +1,12 @@
 <template>
   <section class="container">
     <h1 class="title">{{ title }}</h1>
-    <div>
-      <BlockContent :blocks="prose_content" :serializers="serializers" />
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div>
+          <BlockContent :blocks="prose_content" :serializers="serializers" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -10,6 +14,7 @@
 <script>
 import sanityClient from '../../sanityClient'
 import mp3 from '../../components/mp3'
+import mainImage from '../../components/mainImage'
 
 import BlockContent from 'sanity-blocks-vue-component'
 
@@ -33,7 +38,8 @@ export default {
       data: null,
       serializers: {
         types: {
-          mp3: mp3
+          mp3: mp3,
+          mainImage: mainImage
         }
       }
     }
