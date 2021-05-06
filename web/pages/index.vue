@@ -208,7 +208,7 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Outstanding student writing from all disciplines',
+        content: 'Outstanding student writing from all disciplines'
       }
     ]
   }
