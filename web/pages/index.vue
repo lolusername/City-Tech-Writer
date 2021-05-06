@@ -22,7 +22,7 @@
       <div
         v-for="(doc, i) in sortedDocs"
         :key="i"
-        class="row py-2"
+        class="row m-0 py-2"
         :class="{ 'justify-content-end': !(i % 2) }"
       >
         <div class="col-10">
@@ -285,9 +285,9 @@ h6 {
 }
 @media (max-width: 576px) {
   .cover {
-    background-position: center -1rem;
+    background-position: center center;
     background-color: #214971;
-    background-size: cover !important;
+    background-size: 120% !important;
   }
 }
 </style>
