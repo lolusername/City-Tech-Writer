@@ -1,6 +1,6 @@
 <template>
   <header class="header d-flex justify-content-center">
-    <nuxt-link to="/" :class="{ thin: !$route.path == '/' }" class="home">{{
+    <nuxt-link to="/" :class="{ thin: $route.path == '/' }" class="home">{{
       title
     }}</nuxt-link>
     <nav></nav>
