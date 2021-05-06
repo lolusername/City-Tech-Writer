@@ -11,9 +11,15 @@
           <BlockContent :blocks="prose_content" :serializers="serializers" />
         </div>
 
-        <h4 class="text-center bio">Author Bio(s)</h4>
         <h4 class="text-center authors" v-for="(author, i) in authors" :key="i">
-          <BlockContent :blocks="author.bio" :serializers="serializers" />
+          <h4 class="text-center bio" v-if="author.bio">
+            Author Bio(s)
+          </h4>
+          <BlockContent
+            v-if="author.bio"
+            :blocks="author.bio"
+            :serializers="serializers"
+          />
         </h4>
       </div>
     </div>

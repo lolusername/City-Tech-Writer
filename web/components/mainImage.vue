@@ -1,7 +1,7 @@
 <template>
   <figure class="inline-image my-5">
     <img class="w-100" :src="getURL(asset)" :alt="alts" />
-    <figcaption class="px-5 py-2">{{ caption }}</figcaption>
+    <figcaption class="text-center px-5 py-2">{{ caption }}</figcaption>
   </figure>
 </template>
 <script>
