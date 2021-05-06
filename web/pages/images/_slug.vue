@@ -108,6 +108,9 @@ export default {
 @import url('https://use.typekit.net/fmp2wuw.css');
 
 .container-fluid {
+  padding-top: 8rem !important;
+}
+.container-fluid {
   padding: 1.5rem 0;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);

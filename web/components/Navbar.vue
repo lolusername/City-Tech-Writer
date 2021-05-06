@@ -30,11 +30,19 @@ header {
   font-family: gopher, adobe-garamond-pro, serif;
 }
 .header {
-  padding: 0.7rem;
+  padding: 0.5rem;
   max-width: var(--width-medium);
   box-sizing: border-box;
   margin: 0 auto;
-  font-size: 1.34rem;
+  font-size: 1.25rem;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 1000px;
+  margin-top: 1rem;
+  z-index: 99999;
 }
 .home {
   text-decoration: underline !important;
@@ -43,6 +51,8 @@ header {
   .header {
     display: flex;
     justify-content: space-between;
+    margin: 0;
+    border-radius: 0;
   }
 }
 

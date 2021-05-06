@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container work">
     <h1 class="title">{{ title }}</h1>
     <h4 class="text-center">by</h4>
     <h4 class="text-center" v-for="(author, i) in authors" :key="i">
@@ -10,6 +10,11 @@
         <div>
           <BlockContent :blocks="prose_content" :serializers="serializers" />
         </div>
+
+        <h4 class="text-center bio">Author Bio(s)</h4>
+        <h4 class="text-center authors" v-for="(author, i) in authors" :key="i">
+          <BlockContent :blocks="author.bio" :serializers="serializers" />
+        </h4>
       </div>
     </div>
   </section>
@@ -75,6 +80,17 @@ export default {
 @import '../../styles/custom-properties.css';
 a {
   white-space: pre-line;
+}
+.bio {
+  font-weight: 700;
+  padding-top: 1rem;
+  border-top: 2px solid #000;
+}
+.authors {
+  border-bottom: 2px solid #000;
+}
+.container.work {
+  padding-top: 8rem !important;
 }
 .container {
   padding: 1.5rem 0;

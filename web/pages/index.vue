@@ -114,7 +114,10 @@ const proseQuery = `
 `
 const imageGalleryQuery = `
   {
-    "imageGalleries": *[_type in ["imageGallery"]] | order(order asc) 
+    "imageGalleries": *[_type in ["imageGallery"]] | order(order asc) {
+      ...,
+      authors[]->
+    }
   }
 `
 const issueInfoQuery = `
@@ -179,7 +182,7 @@ export default {
       return {
         personal_narratives: 'personal narratives',
         fiction: 'fiction',
-        fictional_analysis: 'fictional_analysis',
+        literary_analysis: 'Literary Analysis',
         art_crit: 'art criticism',
         philosophy: 'philosophy',
         reflections_healthcare: 'Reflections On Healthcare',
@@ -239,9 +242,9 @@ export default {
 .cover {
   height: 478px;
   background: url(/banner.png), #214971;
-  background-size: 67vmin !important;
+  background-size: 58vmin !important;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   transition: background 1s;
 }
 .cover:hover {
@@ -285,6 +288,7 @@ h6 {
   border: 0.5px solid #000;
   border-radius: 4px;
 }
+
 @media (max-width: 576px) {
   .cover {
     background-position: center center;

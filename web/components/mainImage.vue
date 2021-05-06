@@ -1,5 +1,8 @@
 <template>
-  <img class="w-100 my-5" :src="getURL(asset)" :alt="alt" />
+  <figure class="inline-image my-5">
+    <img class="w-100" :src="getURL(asset)" :alt="alts" />
+    <figcaption class="px-5 py-2">{{ caption }}</figcaption>
+  </figure>
 </template>
 <script>
 import sanityClient from '../sanityClient'
@@ -34,17 +37,27 @@ export default {
     asset: {
       asset: Object,
       default: () => ''
+    },
+    caption: {
+      caption: String,
+      default: () => ''
     }
   }
 }
 </script>
 <style>
+@import url('https://use.typekit.net/rbh5reg.css');
 a {
   color: #000;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
   color: #000;
+}
+.inline-image figcaption {
+  font-family: gopher;
+  font-size: 0.8rem;
 }
 </style>
