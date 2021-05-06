@@ -19,6 +19,7 @@
 import sanityClient from '../../sanityClient'
 import mp3 from '../../components/mp3'
 import mainImage from '../../components/mainImage'
+import longLineBreak from '../../components/longLineBreak'
 
 import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
@@ -46,7 +47,8 @@ export default {
         types: {
           mp3: mp3,
           mainImage: mainImage,
-          youtubeLink: youtube
+          youtubeLink: youtube,
+          longLineBreak: longLineBreak
         }
       }
     }

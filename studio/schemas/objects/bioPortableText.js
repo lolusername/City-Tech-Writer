@@ -28,6 +28,10 @@ export default {
         {
             type: 'mp3',
             tite: "Auto Generated MP3"
+        },
+        {
+            type: 'longLineBreak',
+            tite: "Large Line Break"
         }
     ]
 }

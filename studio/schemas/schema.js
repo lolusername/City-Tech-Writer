@@ -23,6 +23,7 @@ import isHidden from './objects/isHidden'
 import multimediaLink from './objects/multimediaLink'
 import imageCaption from './objects/imageCaption'
 import mp3 from './objects/mp3'
+import longBreak from './objects/longBreak'
 
 
 
@@ -55,7 +56,7 @@ export default createSchema({
         isHidden,
         multimediaLink,
         imageCaption,
-
+        longBreak
 
 
     ])
