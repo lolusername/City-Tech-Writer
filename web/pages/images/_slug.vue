@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="">
-      <div class="row justify-content-between px-md-5">
+      <div class=" justify-content-between px-md-5">
         <figure
           class=" h-100 flex-column flex-md-row d-flex align-items-center"
           v-for="(img, i) in images"
@@ -125,6 +125,11 @@ figure {
   margin: 10vh 0;
   padding: 2rem;
   background: #fff;
+}
+@media (max-width: 576px) {
+  figure {
+    margin: 0;
+  }
 }
 .fig {
   background: #214971;
