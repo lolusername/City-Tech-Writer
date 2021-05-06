@@ -8,8 +8,7 @@
             <h1>City Tech Writer</h1>
             <h4 class="volume">Vol. 16 - 2021</h4>
             <h6>
-              New York City College of Technology's Journal of Outstanding
-              Student Work
+              Outstanding student writing from all disciplines
             </h6>
           </article>
           <article class="col-12 col-md-5">
@@ -28,7 +27,13 @@
         <div class="col-10">
           <div class="row p-3 doc m-1">
             <section
-              v-if="extractImage(doc.prose_content)"
+              v-if="doc.main_image != undefined"
+              class="col-12 col-md-4 py-2"
+            >
+              <img :src="URLbuilder(doc.main_image)" class="w-100" alt="" />
+            </section>
+            <section
+              v-else-if="extractImage(doc.prose_content)"
               class="col-12 col-md-4 py-2"
             >
               <img
@@ -36,12 +41,6 @@
                 class="w-100"
                 alt=""
               />
-            </section>
-            <section
-              v-else-if="doc.main_image != undefined"
-              class="col-12 col-md-4 py-2"
-            >
-              <img :src="URLbuilder(doc.main_image)" class="w-100" alt="" />
             </section>
             <section class="col d-flex justify-content-between">
               <div>

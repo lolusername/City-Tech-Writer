@@ -3,6 +3,10 @@
     <h1 class="title">{{ title }}</h1>
     <div class="d-flex justify-content-center p-2">
       <div class="">
+        <h4 class="text-center">by</h4>
+        <h4 class="text-center" v-for="(author, i) in authors" :key="i">
+          {{ author.name }}
+        </h4>
         <h4 class="mt-4">FACULTY SPONSOR(S)</h4>
         <h4>{{ facultySponsor }}</h4>
       </div>

@@ -9,7 +9,7 @@ export default {
     options: {
         list: [
             { title: 'Personal narratives', value: 'personal_narratives' },
-            { title: 'Fictions and fictional analysis', value: 'fiction' },
+            { title: 'Fiction', value: 'fiction' },
             { title: 'literary analysis', value: 'literary_analysis' },
             { title: 'Art and architectural criticism ', value: 'art_crit' },
             { title: 'Philosophy ', value: 'philosophy' },
