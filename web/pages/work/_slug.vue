@@ -5,8 +5,8 @@
     <h4 class="text-center" v-for="(author, i) in authors" :key="i">
       {{ author.name }}
     </h4>
-    <div class="row justify-content-center">
-      <div class="col-10 col-md-8">
+    <div class="justify-content-center d-flex">
+      <div class="col-12 col-md-8">
         <div>
           <BlockContent :blocks="prose_content" :serializers="serializers" />
         </div>
@@ -69,9 +69,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import '../../styles/custom-properties.css';
-
+* {
+  white-space: pre-line;
+}
 .container {
   padding: 1.5rem 0;
   box-sizing: border-box;
@@ -79,7 +81,10 @@ export default {
   font-family: adobe-garamond-pro, serif;
   font-size: 1.5rem;
 }
-
+a,
+* {
+  overflow-wrap: break-word;
+}
 .title {
   text-align: center;
   margin-bottom: 4rem;
