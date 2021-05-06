@@ -22,7 +22,10 @@ export default {
 
 <style scoped>
 @import '../styles/custom-properties.css';
-
+@import url('https://use.typekit.net/fmp2wuw.css');
+header {
+  font-family: adobe-garamond-pro, serif;
+}
 .header {
   padding: 1.5rem;
   max-width: var(--width-medium);

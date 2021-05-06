@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <div>
+    <div class="d-flex flex-column align-items-center">
       <audio controls>
         <source :src="build(mp3.asset)" type="audio/mpeg" />
         Your browser does not support the audio element.

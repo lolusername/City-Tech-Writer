@@ -1,15 +1,29 @@
 <template>
-  <section class="container">
+  <section class="container-fluid">
     <h1 class="title">{{ title }}</h1>
-    <h4 class="text-center">by</h4>
-    <h4 class="text-center" v-for="(author, i) in authors" :key="i">
-      {{ author.name }}
-    </h4>
-    <div class="row justify-content-center">
-      <div class="col-10 col-md-8">
-        <div>
-          <BlockContent :blocks="prose_content" :serializers="serializers" />
-        </div>
+    <div class="d-flex justify-content-center p-2">
+      <div class="">
+        <h4 class="mt-4">FACULTY SPONSOR(S)</h4>
+        <h4>{{ facultySponsor }}</h4>
+      </div>
+    </div>
+    <div class="">
+      <div class="row justify-content-between px-md-5">
+        <figure
+          class=" h-100 flex-column flex-md-row d-flex align-items-center"
+          v-for="(img, i) in images"
+          :key="i"
+          :class="{ fig: i % 2 }"
+        >
+          <img
+            class="w-100 p-3 col-12 col-md-7"
+            :src="URLbuilder(img.imageForCaption)"
+            :alt="img.caption"
+          />
+          <figcaption class="p-5 col">
+            <h3>{{ img.caption }}</h3>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -20,8 +34,14 @@ import sanityClient from '../../sanityClient'
 import mp3 from '../../components/mp3'
 import mainImage from '../../components/mainImage'
 
-import BlockContent from 'sanity-blocks-vue-component'
+// import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
+
+import imageUrlBuilder from '@sanity/image-url'
+
+// import BlockContent from 'sanity-blocks-vue-component'
+
+const builder = imageUrlBuilder(sanityClient)
 
 const query = slug => {
   console.log(slug)
@@ -37,7 +57,7 @@ const query = slug => {
 }
 
 export default {
-  components: { BlockContent },
+  // components: { BlockContent },
   data() {
     return {
       program: this.$store.getters.getProgram,
@@ -57,6 +77,11 @@ export default {
     const a = await sanityClient.fetch(query(b))
     return a[0]
   },
+  methods: {
+    URLbuilder(img) {
+      return builder.image(img)
+    }
+  },
   computed: {
     sessionsWithoutBreak: data => {
       if (data.program && data.program.schedule) {
@@ -71,15 +96,15 @@ export default {
 
 <style scoped>
 @import '../../styles/custom-properties.css';
+@import url('https://use.typekit.net/fmp2wuw.css');
 
-.container {
+.container-fluid {
   padding: 1.5rem 0;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
   font-family: adobe-garamond-pro, serif;
   font-size: 1.5rem;
 }
-
 .title {
   text-align: center;
   margin-bottom: 4rem;
@@ -90,5 +115,22 @@ export default {
   padding: 0 1.5rem;
   margin: 0 auto;
   box-sizing: border-box;
+}
+figure {
+  margin: 10vh 0;
+  padding: 2rem;
+  background: #fff;
+}
+.fig {
+  background: #214971;
+  color: #fff;
+}
+figure img {
+  padding: 1rem;
+  border: 1px solid #000;
+  background: #214971;
+}
+.fig img {
+  background: #fff;
 }
 </style>

@@ -10,6 +10,7 @@ export default {
         list: [
             { title: 'Personal narratives', value: 'personal_narratives' },
             { title: 'Fictions and fictional analysis', value: 'fiction' },
+            { title: 'literary analysis', value: 'literary_analysis' },
             { title: 'Art and architectural criticism ', value: 'art_crit' },
             { title: 'Philosophy ', value: 'philosophy' },
             { title: 'Reflections On Healthcare ', value: 'reflections_healthcare' },
@@ -17,6 +18,7 @@ export default {
             { title: 'Sociological Inquiry', value: 'soc' },
             { title: 'Science and Biology', value: 'sci_bi' },
             { title: 'Photography', value: 'photo' },
+            { title: 'poetry', value: 'poetry' },
         ]
     }
 }

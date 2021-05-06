@@ -1,14 +1,17 @@
 <template>
   <div>
     <header class="container-fluid p-0">
-      <section class="cover"></section>
-      <section class="issue-info container mb-5">
+      <section class="issue-info container mb-5 p-5 p-md-5">
         <div class="row py-3 d-flex justify-content-center">
-          <article class="col-3 volume">
+          <article class="col-12 col-md-3">
             <h1>City Tech Writer</h1>
-            <h4>Vol. 16 - 2021</h4>
+            <h4 class="volume">Vol. 16 - 2021</h4>
+            <h6>
+              New York City College of Technology's Journal of Outstanding
+              Student Work
+            </h6>
           </article>
-          <article class="col-5">
+          <article class="col-12 col-md-5">
             <BlockContent :blocks="issueInfo[0].description" />
           </article>
         </div>
@@ -19,20 +22,36 @@
         v-for="(doc, i) in sortedDocs"
         :key="i"
         class="row py-2"
-        :class="{ 'justify-content-end': i % 2 }"
+        :class="{ 'justify-content-end': !(i % 2) }"
       >
         <div class="col-10">
           <div class="row p-3 doc m-1">
-            <section v-if="extractImage(doc.prose_content)" class="col-4 py-2">
+            <section
+              v-if="extractImage(doc.prose_content)"
+              class="col-12 col-md-4 py-2"
+            >
               <img
                 :src="extractImage(doc.prose_content)"
                 class="w-100"
                 alt=""
               />
             </section>
+            <section
+              v-else-if="doc.main_image != undefined"
+              class="col-12 col-md-4 py-2"
+            >
+              <img :src="URLbuilder(doc.main_image)" class="w-100" alt="" />
+            </section>
             <section class="col d-flex justify-content-between">
               <div>
-                <NuxtLink :to="`work/${getSlug(doc)}`"
+                <NuxtLink
+                  v-if="doc._type == 'prose'"
+                  :to="`work/${getSlug(doc)}`"
+                  ><h5>{{ doc.title }}</h5></NuxtLink
+                >
+                <NuxtLink
+                  v-if="doc._type == 'imageGallery'"
+                  :to="`images/${getSlug(doc)}`"
                   ><h5>{{ doc.title }}</h5></NuxtLink
                 >
 
@@ -126,6 +145,9 @@ export default {
     getSlug(doc) {
       return doc.slug ? doc.slug.current : ''
     },
+    URLbuilder(img) {
+      return builder.image(img)
+    },
     extractImage(blocks = []) {
       const imgObject = blocks.find(block => {
         return block._type == 'mainImage'
@@ -157,13 +179,15 @@ export default {
       return {
         personal_narratives: 'personal narratives',
         fiction: 'fiction',
+        fictional_analysis: 'fictional_analysis',
         art_crit: 'art criticism',
         philosophy: 'philosophy',
         reflections_healthcare: 'Reflections On Healthcare',
         tech: 'tech',
-        soc: 'sociology',
-        sci_bi: 'sci-fi',
-        photo: 'photography'
+        soc: 'sociological inquiry',
+        sci_bi: 'science & biology',
+        photo: 'photography',
+        poetry: 'poetry'
       }[tag]
     }
   },
@@ -230,7 +254,7 @@ export default {
 .cover {
   height: 450px;
   background: url(/banner.png), #214971;
-  background-size: 35vw !important;
+  background-size: 67vmin !important;
   background-repeat: no-repeat;
   background-position: center;
   transition: background 1s;

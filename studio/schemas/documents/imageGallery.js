@@ -8,6 +8,14 @@ export default {
             type: 'string',
         },
         {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+            }
+        },
+        {
             name: "order",
             title: "Order",
             type: "number",

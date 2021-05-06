@@ -1,18 +1,18 @@
 <template>
   <div>
-    <!-- <Navbar :title="'CTW'" /> -->
+    <Navbar :title="'CTW'" />
     <nuxt />
     <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
-// import Navbar from '~/components/Navbar.vue'
+import Navbar from '~/components/Navbar.vue'
 // import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    // Navbar
+    Navbar
     // Footer
   }
 }
