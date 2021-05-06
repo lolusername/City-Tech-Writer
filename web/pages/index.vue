@@ -275,6 +275,9 @@ h6 {
 .sponsor h6 {
   font-size: 0.67rem;
 }
+.sponsor {
+  font-size: 1rem;
+}
 .doc {
   border: 1px solid #000;
   background: #fafafa;
