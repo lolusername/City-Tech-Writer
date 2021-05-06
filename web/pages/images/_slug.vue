@@ -82,6 +82,11 @@ export default {
       return builder.image(img)
     }
   },
+  head() {
+    return {
+      title: 'City Tech Writer'
+    }
+  },
   computed: {
     sessionsWithoutBreak: data => {
       if (data.program && data.program.schedule) {

@@ -197,23 +197,8 @@ export default {
     this.sortedDocs.splice(34, 0, ...this.imageGalleries)
   },
   head() {
-    if (!this || !this.info) {
-      return
-    }
     return {
-      title: this.info.name,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.info.description
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.info.keywords.join(',')
-        }
-      ]
+      title: 'City Tech Writer - VOL. 16'
     }
   }
 }

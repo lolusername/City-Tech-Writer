@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar :title="'CTW'" />
+    <Navbar :title="'Homepage'" />
     <nuxt />
     <!-- <Footer /> -->
   </div>
