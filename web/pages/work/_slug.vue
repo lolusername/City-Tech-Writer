@@ -9,12 +9,12 @@
       <div class="col-12 col-md-8">
         <div>
           <BlockContent :blocks="prose_content" :serializers="serializers" />
+          <h4 class="text-center">
+            Author Bio(s)
+          </h4>
         </div>
 
         <h4 class="text-center authors" v-for="(author, i) in authors" :key="i">
-          <h4 class="text-center bio" v-if="author.bio">
-            Author Bio(s)
-          </h4>
           <BlockContent
             v-if="author.bio"
             :blocks="author.bio"
