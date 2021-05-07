@@ -4,7 +4,7 @@ import sanityClient from './sanityClient'
 const routesQuery = `
   {
     "sessions": *[_type == "session"],
-    "work": *[],
+    "work": *[defined(slug.current)],
     "speakers": *[_type == "person" && defined(slug.current)]
   }
 `
