@@ -4,6 +4,7 @@ import sanityClient from './sanityClient'
 const routesQuery = `
   {
     "sessions": *[_type == "session"],
+    "work": *[],
     "speakers": *[_type == "person" && defined(slug.current)]
   }
 `
@@ -63,7 +64,8 @@ export default {
             return sanityClient.fetch(routesQuery).then(res => {
                 return [
                     ...res.sessions.map(item => `/sessions/${item._id}`),
-                    ...res.speakers.map(item => `/speakers/${item.slug.current}`)
+                    ...res.speakers.map(item => `/speakers/${item.slug.current}`),
+                    ...res.work.map(item => `/work/${item.slug.current}`)
                 ]
             })
         }
