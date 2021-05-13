@@ -5,7 +5,7 @@ const routesQuery = `
   {
     "sessions": *[_type == "session"],
     "work": *[defined(slug.current)],
-    "images": *[ _type="images" && defined(slug.current)],
+    "images": *[ _type == "images" && defined(slug.current)],
     "speakers": *[_type == "person" && defined(slug.current)]
   }
 `
