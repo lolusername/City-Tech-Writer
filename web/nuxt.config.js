@@ -5,6 +5,7 @@ const routesQuery = `
   {
     "sessions": *[_type == "session"],
     "work": *[defined(slug.current)],
+    "images": *[ _type="images" && defined(slug.current)],
     "speakers": *[_type == "person" && defined(slug.current)]
   }
 `
@@ -34,8 +35,9 @@ export default {
     /*
      ** Global CSS
      */
-    css: [{ src: 'normalize.css' },
-        { src: 'bootstrap/dist/css/bootstrap.min.css' },
+    css: [
+        { src: 'normalize.css' },
+        { src: 'bootstrap/dist/css/bootstrap.min.css' }
     ],
 
     /*

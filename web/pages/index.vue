@@ -30,7 +30,11 @@
               v-if="doc.main_image != undefined"
               class="col-12 col-md-4 py-2"
             >
-              <img :src="URLbuilder(doc.main_image)" class="w-100" alt="" />
+              <img
+                :src="`${URLbuilder(doc.main_image)}`"
+                class="w-100"
+                alt=""
+              />
             </section>
             <section
               v-else-if="extractImage(doc.prose_content)"
@@ -160,7 +164,7 @@ export default {
       if (imgObject === undefined) return
       console.log(imgObject.asset)
 
-      return builder.image(imgObject)
+      return `${builder.image(imgObject)}?w=400`
     },
     toPlainText(blocks = []) {
       return (
@@ -250,7 +254,7 @@ export default {
 
 .cover {
   height: 478px;
-  background: url(/banner.png), #214971;
+  background: url(/banner.png?w=800), #214971;
   background-size: 58vmin !important;
   background-repeat: no-repeat;
   background-position: center center;
