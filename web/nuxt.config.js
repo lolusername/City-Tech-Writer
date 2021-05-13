@@ -3,8 +3,8 @@ import sanityClient from './sanityClient'
 
 const routesQuery = `
   {
-    "work": *[_type == "work" && defined(slug.current)],
-    "images": *[_type == "images" && defined(slug.current)]
+    "work": *[ && defined(slug.current)],
+    "images": *[ && defined(slug.current)]
   }
 `
 
