@@ -3,10 +3,8 @@ import sanityClient from './sanityClient'
 
 const routesQuery = `
   {
-    "sessions": *[_type == "session"],
-    "work": *[defined(slug.current)],
-    "images": *[ _type == "images" && defined(slug.current)],
-    "speakers": *[_type == "person" && defined(slug.current)]
+    "work": *[_type == "work" && defined(slug.current)],
+    "images": *[_type == "images" && defined(slug.current)]
   }
 `
 
@@ -65,8 +63,7 @@ export default {
         routes: () => {
             return sanityClient.fetch(routesQuery).then(res => {
                 return [
-                    ...res.sessions.map(item => `/sessions/${item._id}`),
-                    ...res.speakers.map(item => `/speakers/${item.slug.current}`),
+                    ...res.images.map(item => `/images/${item.slug.current}`),
                     ...res.work.map(item => `/work/${item.slug.current}`)
                 ]
             })
