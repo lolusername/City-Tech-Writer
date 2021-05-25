@@ -18,15 +18,11 @@ export default {
     }
   },
   methods: {
-    getURL(block) {
-      return builder.image(block)
-    },
-    build({ _ref }) {
-      const a = _ref.split('-')
-      const id = a[1]
-      const fileType = a[2]
-
-      return `https://cdn.sanity.io/images/vnoqhn6d/production/${id}.${fileType}?dl`
+    getURL(imgObject) {
+      return builder
+        .image(imgObject)
+        .width(1660)
+        .url()
     }
   },
   props: {
