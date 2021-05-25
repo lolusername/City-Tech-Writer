@@ -46,8 +46,11 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxtjs/pwa'],
+    modules: ['@nuxtjs/pwa', '@nuxtjs/google-analytics'],
 
+    googleAnalytics: {
+        id: 'G-S5DR0DVC25'
+    },
     /*
      ** Set global info from sanity document
      */

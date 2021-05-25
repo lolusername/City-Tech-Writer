@@ -154,24 +154,28 @@ export default {
     getSlug(doc) {
       return doc.slug ? doc.slug.current : ''
     },
-    URLbuilder(img) {
-      return builder.image(img)
+    URLbuilder(imgObject) {
+      return builder
+        .image(imgObject)
+        .width(600)
+        .url()
     },
     extractImage(blocks = []) {
       const imgObject = blocks.find(block => {
         return block._type == 'mainImage'
       })
       if (imgObject === undefined) return
-      console.log(imgObject.asset)
 
-      return `${builder.image(imgObject)}?w=400`
+      return builder
+        .image(imgObject)
+        .width(600)
+        .url()
     },
     toPlainText(blocks = []) {
       return (
         blocks
           // loop through each block
           .map(block => {
-            console.log(1, block)
             // if it's not a text block with children,
             // return nothing
             if (block._type !== 'block' || !block.children) {
