@@ -34,18 +34,18 @@ export default {
       const fileType = a[2]
 
       return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}`
-    }
+    },
   },
   props: {
     mp3: {
       mp3: String,
-      default: () => ''
+      default: () => '',
     },
     mp3Name: {
       mp3: String,
-      default: () => ''
-    }
-  }
+      default: () => '',
+    },
+  },
 }
 </script>
 <style>

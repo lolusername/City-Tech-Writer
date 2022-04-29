@@ -9,9 +9,7 @@
       <div class="col-12 col-md-8">
         <div>
           <BlockContent :blocks="prose_content" :serializers="serializers" />
-          <h4 class="text-center">
-            Author Bio(s)
-          </h4>
+          <h4 class="text-center">Author Bio(s)</h4>
         </div>
 
         <h4 class="text-center authors" v-for="(author, i) in authors" :key="i">
@@ -31,11 +29,13 @@ import sanityClient from '../../sanityClient'
 import mp3 from '../../components/mp3'
 import mainImage from '../../components/mainImage'
 import longLineBreak from '../../components/longLineBreak'
+import pull_quote from '../../components/PullQuote'
 
 import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
+import AutoPlayVid from '../../components/AutoPlayVid.vue'
 
-const query = slug => {
+const query = (slug) => {
   console.log(slug)
   return `
 
@@ -59,9 +59,11 @@ export default {
           mp3: mp3,
           mainImage: mainImage,
           youtubeLink: youtube,
-          longLineBreak: longLineBreak
-        }
-      }
+          longLineBreak: longLineBreak,
+          vid: AutoPlayVid,
+        },
+        marks: { pull_quote: pull_quote },
+      },
     }
   },
   async asyncData({ route }) {
@@ -71,14 +73,14 @@ export default {
     return a[0]
   },
   computed: {
-    sessionsWithoutBreak: data => {
+    sessionsWithoutBreak: (data) => {
       if (data.program && data.program.schedule) {
         return data.program.schedule.filter(
-          i => i.session.sessionType !== 'break'
+          (i) => i.session.sessionType !== 'break'
         )
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
