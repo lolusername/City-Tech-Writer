@@ -1,6 +1,14 @@
 <template>
   <div>
-    <video width="100%" height="100%" muted autoplay>
+    <video
+      width="100%"
+      height="100%"
+      muted
+      autoplay
+      webkit-playsinline
+      playsinline
+      loop
+    >
       <source :src="build(vid.asset)" type="video/mp4" />
     </video>
   </div>
