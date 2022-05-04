@@ -1,6 +1,6 @@
 <template>
   <figure class="inline-image my-5">
-    <img class="w-100" :src="getURL(asset)" :alt="alts" />
+    <img class="w-100" :src="getURL(asset)" :alt="alt" />
     <figcaption class="text-center px-5 py-2">{{ caption }}</figcaption>
   </figure>
 </template>
@@ -19,26 +19,23 @@ export default {
   },
   methods: {
     getURL(imgObject) {
-      return builder
-        .image(imgObject)
-        .width(1660)
-        .url()
-    }
+      return builder.image(imgObject).width(1660).url()
+    },
   },
   props: {
     alt: {
       alt: String,
-      default: () => ''
+      default: () => '',
     },
     asset: {
       asset: Object,
-      default: () => ''
+      default: () => '',
     },
     caption: {
       caption: String,
-      default: () => ''
-    }
-  }
+      default: () => '',
+    },
+  },
 }
 </script>
 <style>

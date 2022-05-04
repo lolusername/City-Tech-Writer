@@ -7,7 +7,8 @@ export default {
       type: 'file',
       name: 'vid',
       title: 'Auto play vid'
-    }
+    },
+    { type: 'string', name: 'alt', title: 'Alt Text' }
   ],
   preview: {
     select: {
