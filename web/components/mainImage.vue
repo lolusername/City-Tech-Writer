@@ -1,5 +1,5 @@
 <template>
-  <figure class="inline-image my-5">
+  <figure class="inline-image my-1">
     <img class="w-100" :src="getURL(asset)" :alt="alt" />
     <figcaption class="text-center px-5 py-2">{{ caption }}</figcaption>
   </figure>

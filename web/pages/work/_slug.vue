@@ -9,16 +9,16 @@
       <div class="col-12 col-md-8">
         <div>
           <BlockContent :blocks="prose_content" :serializers="serializers" />
-          <h4 class="text-center">Author Bio(s)</h4>
         </div>
 
-        <h4 class="text-center authors" v-for="(author, i) in authors" :key="i">
+        <section class="bio" v-for="(author, i) in authors" :key="i">
+          <h4 class="text-center">Author Bio(s)</h4>
           <BlockContent
             v-if="author.bio"
             :blocks="author.bio"
             :serializers="serializers"
           />
-        </h4>
+        </section>
       </div>
     </div>
   </section>
@@ -91,8 +91,9 @@ a {
 }
 .bio {
   font-weight: 700;
-  padding-top: 1rem;
+  padding: 1rem;
   border-top: 2px solid #000;
+  text-align: left;
 }
 .authors {
   border-bottom: 2px solid #000;
@@ -121,5 +122,11 @@ a,
   padding: 0 1.5rem;
   margin: 0 auto;
   box-sizing: border-box;
+}
+.bio {
+  background: #000;
+  color: #f1f1f1;
+  border-radius: 0.5rem;
+  margin: 2rem 0 3rem 0;
 }
 </style>

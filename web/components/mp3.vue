@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center mb-3">
     <div class="d-flex flex-column align-items-center">
       <audio controls>
         <source :src="build(mp3.asset)" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <h6>
+      <h6 class="audio-caption">
         Audio for <span class="mp3-link">{{ mp3Name }}</span>
       </h6>
     </div>
@@ -59,5 +59,8 @@ a:hover {
 }
 .mp3-link {
   font-style: italic;
+}
+.audio-caption {
+  margin-top: 1rem;
 }
 </style>

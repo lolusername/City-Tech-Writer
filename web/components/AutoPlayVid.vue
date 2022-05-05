@@ -10,6 +10,7 @@
       loop
     >
       <source :src="build(vid.asset)" type="video/mp4" />
+      <article class="text-for-video">{{ alt }}</article>
     </video>
   </div>
 </template>
@@ -18,6 +19,9 @@
 export default {
   props: {
     vid: {
+      type: String,
+    },
+    alt: {
       type: String,
     },
   },

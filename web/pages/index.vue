@@ -1,12 +1,12 @@
 <template>
   <div>
-    <header class="container-fluid p-0">
+    <header id="head" class="container-fluid p-0">
       <div class="cover"></div>
       <section class="issue-info container mb-5 p-5 p-md-5">
         <div class="row py-3 d-flex justify-content-center">
           <article class="col-12 col-md-3">
             <h1>City Tech Writer</h1>
-            <h4 class="volume">Vol. 16 - 2021</h4>
+            <h4 class="volume">Vol. 17 - 2022</h4>
             <h6>Outstanding student writing from all disciplines</h6>
           </article>
           <article class="col-12 col-md-5">
@@ -107,7 +107,7 @@ const builder = imageUrlBuilder(sanityClient)
 
 const proseQuery = `
   {
-    "prose": *[_type in ["prose"] && volume != 'v17'] | order(order asc) {
+    "prose": *[_type in ["prose"] && volume == 'v17'] | order(order asc) {
       ...,
        authors[]->,
        facultySponsor,
@@ -118,7 +118,7 @@ const proseQuery = `
 `
 const imageGalleryQuery = `
   {
-    "imageGalleries": *[_type in ["imageGallery"]  && volume != 'v17'] | order(order asc) {
+    "imageGalleries": *[_type in ["imageGallery"]  && volume == 'v17'] | order(order asc) {
       ...,
       authors[]->
     }
@@ -224,7 +224,7 @@ export default {
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
   font-family: adobe-garamond-pro, serif;
-  background: #f1f2f1;
+  background: transparent;
   font-weight: 400;
 
   font-style: normal;
@@ -250,16 +250,45 @@ export default {
 
 .cover {
   height: 478px;
-  background: url(/banner.png?w=800), #214971;
-  background-size: 58vmin !important;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url(/banner.png?w=800), url(/bg.png), #212526;
+  background-size: 75vh, 50% !important;
+  background-repeat: no-repeat, repeat;
+  background-position: center 50px;
   transition: background 1s;
 }
 .cover:hover {
-  background-position: center -1rem;
-  background-color: #214971;
-  background-size: 120% !important;
+  background-size: 75vh, 67% !important;
+  animation-duration: 0.5s;
+
+  animation-duration: infinite;
+}
+
+.cover {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translate(0, 50vh) scale(0.1, 1);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0, 10) scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes sparkle {
+  from {
+    transform: translate(2vh, 3vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-2vh, -3vh);
+    opacity: 1;
+  }
 }
 .tag {
   background: #000;
@@ -307,5 +336,8 @@ h6 {
   .tag {
     font-size: 1rem;
   }
+}
+.head {
+  background-color: red !important;
 }
 </style>
