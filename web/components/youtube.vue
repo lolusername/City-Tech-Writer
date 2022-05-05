@@ -1,21 +1,21 @@
 <template>
   <div class="video-container my-5">
     <iframe
-      v-if="videoService === 'youtube'"
-      :src="`https://www.youtube.com/embed/${videoId}`"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      v-if="videoService === 'vimeo'"
+      title="vimeo-player"
+      :src="`https://player.vimeo.com/video/${getVimeoId(url)}?h=04d712d8b4`"
+      width="640"
+      height="360"
+      frameborder="0"
       allowfullscreen
-      class="video"
     ></iframe>
     <div v-else>
       <iframe
-        title="vimeo-player"
-        :src="`https://player.vimeo.com/video/${getVimeoId(url)}?h=04d712d8b4`"
-        width="640"
-        height="360"
-        frameborder="0"
+        :src="`https://www.youtube.com/embed/${videoId}`"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        class="video"
       ></iframe>
     </div>
   </div>
