@@ -7,7 +7,7 @@
     </h4>
     <div class="justify-content-center d-flex">
       <div class="col-12 col-md-8">
-        <div>
+        <div id="my-content">
           <BlockContent :blocks="prose_content" :serializers="serializers" />
         </div>
 
@@ -80,6 +80,13 @@ export default {
         )
       }
     },
+  },
+  mounted() {
+    var r = Recogito.init({
+      content: document.getElementById('my-content'), // ID or DOM element
+    })
+
+    // Add an event handler
   },
 }
 </script>

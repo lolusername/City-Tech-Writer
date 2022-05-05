@@ -3,6 +3,12 @@
     <nuxt-link to="/" :class="{ thin: $route.path == '/' }" class="home">{{
       title
     }}</nuxt-link>
+    <nuxt-link
+      to="/previous"
+      :class="{ thin: $route.path == '/previous' }"
+      class="home px-3"
+      >previous</nuxt-link
+    >
     <nav></nav>
   </header>
 </template>

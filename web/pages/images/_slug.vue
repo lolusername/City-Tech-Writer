@@ -1,5 +1,7 @@
 <template>
   <section class="container-fluid">
+    <script src=" https://recogito.github.io/recogito-js/recogito.min.js"></script>
+
     <h1 class="title">{{ title }}</h1>
     <div class="d-flex justify-content-center p-2">
       <div class="">
