@@ -11,6 +11,10 @@
         <h4>{{ facultySponsor }}</h4>
       </div>
     </div>
+    <h4 class="d-flex justify-content-center">Description:</h4>
+    <div class="d-flex justify-content-center text-sm">
+      <BlockContent :blocks="description" :serializers="serializers" />
+    </div>
     <div class="">
       <div class="justify-content-between px-md-5">
         <figure
@@ -35,15 +39,15 @@
 
 <script>
 import sanityClient from '../../sanityClient'
-import mp3 from '../../components/mp3'
+import mp3 from '../../components/mp3.vue'
+import longLineBreak from '../../components/longLineBreak.vue'
 import mainImage from '../../components/mainImage'
-
+import BlockContent from 'sanity-blocks-vue-component'
+import AutoPlayVid from '../../components/autoPlayVid'
 // import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
 
 import imageUrlBuilder from '@sanity/image-url'
-
-// import BlockContent from 'sanity-blocks-vue-component'
 
 const builder = imageUrlBuilder(sanityClient)
 
@@ -61,7 +65,7 @@ const query = (slug) => {
 }
 
 export default {
-  // components: { BlockContent },
+  components: { BlockContent },
   data() {
     return {
       program: this.$store.getters.getProgram,
@@ -71,6 +75,9 @@ export default {
           mp3: mp3,
           mainImage: mainImage,
           youtubeLink: youtube,
+
+          longLineBreak: longLineBreak,
+          vid: AutoPlayVid,
         },
       },
     }

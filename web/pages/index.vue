@@ -31,7 +31,7 @@
               <img
                 :src="`${URLbuilder(doc.main_image)}`"
                 class="w-100"
-                alt=""
+                :alt="doc.main_image.alt"
               />
             </section>
             <section
@@ -41,7 +41,7 @@
               <img
                 :src="extractImage(doc.prose_content)"
                 class="w-100"
-                alt=""
+                :alt="doc.main_image.alt"
               />
             </section>
             <section
