@@ -43,7 +43,7 @@ import mp3 from '../../components/mp3.vue'
 import longLineBreak from '../../components/longLineBreak.vue'
 import mainImage from '../../components/mainImage'
 import BlockContent from 'sanity-blocks-vue-component'
-import AutoPlayVid from '../../components/autoPlayVid'
+import AutoPlayVid from '../../components/AutoPlayVid'
 // import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
 
