@@ -12,9 +12,7 @@
       </div>
     </div>
     <h4 class="d-flex justify-content-center">Description:</h4>
-    <div class="d-flex justify-content-center text-sm">
-      <BlockContent :blocks="description" :serializers="serializers" />
-    </div>
+
     <div class="">
       <div class="justify-content-between px-md-5">
         <figure
@@ -33,6 +31,32 @@
           </figcaption>
         </figure>
       </div>
+    </div>
+    <div>
+      <div class="d-flex justify-content-center text-sm audio border-top">
+        <BlockContent :blocks="description" :serializers="serializers" />
+      </div>
+    </div>
+    <p class="text-center grid row justify-content-md-center flex">
+      Author Bios
+    </p>
+    <div class="row p-5">
+      <article
+        class="col col-lg-4 inline-block"
+        v-for="author in authors"
+        :key="author._id"
+      >
+        <div class="d-flex justify-content-center authors">
+          <div class="w-100 border-top px-3">
+            <p class="font-weight-bold">{{ author.name }}</p>
+            <BlockContent
+              class=""
+              :blocks="author.bio"
+              :serializers="serializers"
+            ></BlockContent>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 </template>
@@ -117,6 +141,13 @@ export default {
 .container-fluid {
   padding-top: 8rem !important;
 }
+.audio {
+  font-size: 13px !important;
+}
+.audio p {
+  font-size: 13px !important;
+  text-align: center;
+}
 .container-fluid {
   padding: 1.5rem 0;
   box-sizing: border-box;
@@ -127,6 +158,9 @@ export default {
 .title {
   text-align: center;
   margin-bottom: 4rem;
+}
+.authors {
+  font-size: 13px;
 }
 
 .sessionGridContainer {
