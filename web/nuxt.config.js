@@ -40,7 +40,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/eventInformation'],
+  plugins: [
+    '~/plugins/eventInformation',
+    { src: '~/plugins/recogito', mode: 'client' }
+  ],
 
   /*
    ** Nuxt.js modules

@@ -35,6 +35,7 @@ import BlockContent from 'sanity-blocks-vue-component'
 import youtube from '../../components/youtube.vue'
 import AutoPlayVid from '../../components/AutoPlayVid.vue'
 
+import '@recogito/recogito-js/dist/recogito.min.css'
 const query = (slug) => {
   console.log(slug)
   return `
@@ -54,6 +55,7 @@ export default {
     return {
       program: this.$store.getters.getProgram,
       data: null,
+      annotations: [],
       serializers: {
         types: {
           mp3: mp3,
@@ -85,8 +87,9 @@ export default {
     var r = Recogito.init({
       content: document.getElementById('my-content'), // ID or DOM element
     })
-
-    // Add an event handler
+    r.on('createAnnotation', function (annotation) {
+      console.log(annotation)
+    })
   },
 }
 </script>
