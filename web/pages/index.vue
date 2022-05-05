@@ -118,7 +118,7 @@ const proseQuery = `
 `
 const imageGalleryQuery = `
   {
-    "imageGalleries": *[_type in ["imageGallery"]] | order(order asc) {
+    "imageGalleries": *[_type in ["imageGallery"]  && volume != 'v17'] | order(order asc) {
       ...,
       authors[]->
     }
