@@ -41,8 +41,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/eventInformation',
-    { src: '~/plugins/recogito', mode: 'client' }
+    // { src: '~/plugins/recogito' }
   ],
 
   /*
