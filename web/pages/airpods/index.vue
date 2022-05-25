@@ -84,10 +84,7 @@ export default {
 }
 </script>
 
-<style>
-body {
-  background: linear-gradient(to left, #e2e2e2, #c9d6ff);
-}
+<style scoped>
 @keyframes rotate {
   from {
     transform: rotate(0deg);
