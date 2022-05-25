@@ -85,18 +85,8 @@ export default {
 </script>
 
 <style scoped>
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 #airpods {
-  display: inline-block;
-
-  transform: scale(calc(1 + var(--scroll) / (1.5 * var(--current))));
+  transform: scale(calc(1 + var(--scroll) / (var(--current))));
 }
 
 .padding-t {
