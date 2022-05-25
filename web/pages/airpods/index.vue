@@ -84,7 +84,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
+body {
+  background: linear-gradient(to left, #e2e2e2, #c9d6ff);
+}
 #airpods {
   transform: scale(calc(1 + var(--scroll) / (var(--current))));
 }
@@ -93,7 +96,7 @@ export default {
   margin: 100px 0;
   /* border: solid 1px #000; */
   max-height: 67vh;
-  background: rgba(255, 255, 255, 0.67);
+  background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
