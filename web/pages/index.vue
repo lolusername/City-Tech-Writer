@@ -48,10 +48,8 @@
               class="col d-flex justify-content-between flex-column flex-md-row"
             >
               <div>
-                <NuxtLink
-                  v-if="doc._type == 'prose'"
-                  :to="`work/${getSlug(doc)}`"
-                  ><h5>{{ doc.title }}</h5></NuxtLink
+                <a v-if="doc._type == 'prose'" :href="`work/${getSlug(doc)}`"
+                  ><h5>{{ doc.title }}</h5></a
                 >
                 <NuxtLink
                   v-if="doc._type == 'imageGallery'"
@@ -132,12 +130,12 @@ const issueInfoQuery = `
 
 export default {
   filters: {
-    dateFilter,
+    dateFilter
   },
   data() {
     return {
       program: this.$store.getters.getProgram,
-      sortedDocs: [],
+      sortedDocs: []
     }
   },
   components: { BlockContent },
@@ -153,21 +151,27 @@ export default {
       return doc.slug ? doc.slug.current : ''
     },
     URLbuilder(imgObject) {
-      return builder.image(imgObject).width(600).url()
+      return builder
+        .image(imgObject)
+        .width(600)
+        .url()
     },
     extractImage(blocks = []) {
-      const imgObject = blocks.find((block) => {
+      const imgObject = blocks.find(block => {
         return block._type == 'mainImage'
       })
       if (imgObject === undefined) return
 
-      return builder.image(imgObject).width(600).url()
+      return builder
+        .image(imgObject)
+        .width(600)
+        .url()
     },
     toPlainText(blocks = []) {
       return (
         blocks
           // loop through each block
-          .map((block) => {
+          .map(block => {
             // if it's not a text block with children,
             // return nothing
             if (block._type !== 'block' || !block.children) {
@@ -175,7 +179,7 @@ export default {
             }
             // loop through the children spans, and join the
             // text strings
-            return block.children.map((child) => child.text).join('')
+            return block.children.map(child => child.text).join('')
           })
           .join('\n\n')
       )
@@ -192,9 +196,9 @@ export default {
         soc: 'sociological inquiry',
         sci_bi: 'science & biology',
         photo: 'photography',
-        poetry: 'poetry',
+        poetry: 'poetry'
       }[tag]
-    },
+    }
   },
   mounted() {
     this.sortedDocs = this.prose.slice()
@@ -208,10 +212,10 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Outstanding student writing from all disciplines',
-      },
-    ],
-  },
+        content: 'Outstanding student writing from all disciplines'
+      }
+    ]
+  }
 }
 </script>
 
