@@ -1,8 +1,8 @@
 <template>
-  <section>
-    <h2 class="text-center">ACT 1</h2>
+  <section class="">
+    <h2 class="text-center ">ACT 1</h2>
     <pre>
-    INT. HOME - DAY
+  INT. HOME - DAY
 
 
 
@@ -55,6 +55,7 @@ Chris sighs.
 
 CHRIS 
 Anything for that KHALED KHALED.
+
 </pre
     >
     <slot></slot>

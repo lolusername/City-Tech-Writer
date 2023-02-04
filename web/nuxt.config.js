@@ -80,6 +80,8 @@ export default {
   build: {
     postcss: {
       plugins: {
+        tailwindcss: {},
+
         'postcss-import': {},
         'postcss-preset-env': {
           stage: 3,

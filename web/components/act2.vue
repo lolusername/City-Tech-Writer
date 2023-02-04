@@ -2,7 +2,7 @@
   <div>
     <h2 class="text-center">ACT 2</h2>
     <pre>
-        INT. HOME - MONTAGE
+      INT. HOME - MONTAGE
 
 
 
@@ -44,6 +44,7 @@ Wait, I don’t even like Lifesavers.
 
 Chris throws the bag of candy out of frame.
 
+
 </pre
     >
   </div>
@@ -53,5 +54,4 @@ Chris throws the bag of candy out of frame.
 export default {}
 </script>
 
-<style>
-</style>
+<style></style>

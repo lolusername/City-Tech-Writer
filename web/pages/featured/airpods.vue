@@ -6,11 +6,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <div class="row d-flex align-items-center">
-      <div id="airpods" class="col-6"></div>
+    <div class="row d-flex align-items-center ">
+      <div id="airpods" class="col-6 pt-12"></div>
 
       <component
-        class="col-6 vh-100 overflow-auto padding-t current"
+        class="col-6 overflow-auto padding-t current "
+        id="script"
         v-bind:is="currentAct"
         @click="stopAutoScroll"
       >
@@ -61,10 +62,11 @@ export default {
       },
       false
     )
+    const width = screen.width > 450 ? 450 : screen.width - 30
     const _this = this
     const options = {
       id: 576400765,
-      width: 500,
+      width: width,
       loop: true
     }
     _this.player = new Vimeo.Player('airpods', options)
@@ -87,9 +89,6 @@ export default {
 <style>
 body {
   background: linear-gradient(to left, #e2e2e2, #c9d6ff);
-}
-#airpods {
-  transform: scale(calc(1 + var(--scroll) / (var(--current))));
 }
 
 .padding-t {
@@ -117,5 +116,24 @@ body {
   left: auto;
 
   /* transform: skew(8deg) rotate(3deg); */
+}
+
+@media screen and (max-width: 480px) {
+  #script {
+    flex: 100%;
+    display: block;
+    max-width: 100%;
+  }
+  iframe {
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+  .padding-t {
+    margin: 18px 0;
+    /* border: solid 1px #000; */
+    max-height: 67vh;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  }
 }
 </style>

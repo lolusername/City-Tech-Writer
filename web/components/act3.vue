@@ -2,7 +2,7 @@
   <section>
     <h2 class="text-center">ACT 3</h2>
     <pre>
-    INT. HOME - TWO WEEKS LATER
+   INT. HOME - TWO WEEKS LATER
 
 
 
@@ -72,8 +72,8 @@ AAAHHHHH-
 
 CUT TO BLACK.
 
-  </pre
-    >
+
+  </pre>
   </section>
 </template>
 
@@ -81,5 +81,4 @@ CUT TO BLACK.
 export default {}
 </script>
 
-<style>
-</style>
+<style></style>
