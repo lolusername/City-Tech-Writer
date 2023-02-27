@@ -2,17 +2,6 @@
 
 The City Tech Writer is a journal of student work at CUNY City Tech. The backend is built using Sanity, and the frontend is built using Vue/Nuxt.
 
-## Installation
-
-To install this project, run the following commands:
-
-git clone <repository-url>
-cd sanity-nuxt-events
-npm install
-
-bash
-Copy code
-
 ## Usage
 
 To run the project, use the following command:
