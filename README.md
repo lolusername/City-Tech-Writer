@@ -1,30 +1,46 @@
-# CTW
+# The City Tech Writer
 
-_Data-driven conference website in Vue.js. Speakers, sessions, and scheduling._
+The City Tech Writer is a journal of student work at CUNY City Tech. The backend is built using Sanity, and the frontend is built using Vue/Nuxt.
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nuxt-events).
+## Installation
 
-## What you have
+To install this project, run the following commands:
 
-- An event page with [Nuxt.js](https://nuxtjs.org/)
-- Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Netlify](https://netlify.com)
+git clone <repository-url>
+cd sanity-nuxt-events
+npm install
 
-## Quick start
+bash
+Copy code
 
-1. Clone this repository
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally
+## Usage
 
-## Deploy changes
+To run the project, use the following command:
 
-Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+npm run dev
 
-## Get help
+This will start the development server at `http://localhost:3000`.
 
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
+## Scripts
 
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io)
+The following scripts are available:
+
+- `npm run build`: builds the project
+- `npm run dev`: starts the development server
+- `npm run format`: formats the code
+- `npm run build-studio`: builds the Sanity studio
+- `npm run build-web`: builds the frontend
+- `npm run graphql-deploy`: deploys the GraphQL API
+- `npm run lint`: lints the code
+- `npm test`: runs the tests
+
+## Dependencies
+
+The project has the following dependencies:
+
+- `@sanity/cli`: version 2.0.0
+- `lerna`: version 3.13.1
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
