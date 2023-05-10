@@ -60,7 +60,11 @@ export default {
       name: 'volume',
       type: 'string',
       options: {
-        list: [{ title: 'Volume 16', value: 'v16' }, { title: 'Volume 17', value: 'v17' }] // <-- predefined values
+        list: [
+          { title: 'Volume 16', value: 'v16' },
+          { title: 'Volume 17', value: 'v17' },
+          { title: 'Volume 18', value: 'v18' }
+        ] // <-- predefined values
       }
     }
   ],
