@@ -8,7 +8,7 @@ import prose from './documents/prose'
 import author from './documents/author'
 import imageGallery from './documents/imageGallery'
 // import textPairedImages from './documents/textPairedImages'
-// import youtubeDocument from './documents/youtubeDocument'
+import youtubeDocument from './documents/youtubeDocument'
 import issueInfo from './documents/issueInfo'
 
 // Object types
@@ -38,7 +38,7 @@ export default createSchema({
     imageGallery,
     // textPairedImages,
     author,
-    // youtubeDocument,
+    youtubeDocument,
     tags,
     mp3,
     issueInfo,
