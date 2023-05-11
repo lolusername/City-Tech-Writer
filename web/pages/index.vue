@@ -6,7 +6,7 @@
         <div class="row py-3 d-flex justify-content-center">
           <article class="col-12 col-md-3">
             <h1>City Tech Writer</h1>
-            <h4 class="volume">Vol. 17 - 2022</h4>
+            <h4 class="volume">Vol. 18 - 2023</h4>
             <h6>Outstanding student writing from all disciplines</h6>
           </article>
           <article class="col-12 col-md-5">
@@ -254,46 +254,15 @@ export default {
 
 .cover {
   height: 478px;
-  background: url(/banner.png?w=800), url(/bg.png), #212526;
-  background-size: 75vh, 50% !important;
-  background-repeat: no-repeat, repeat;
-  background-position: center 50px;
+  background: url(/banner.png);
+  background-size: contain !important;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position-x: center;
   transition: background 1s;
-}
-.cover:hover {
-  background-size: 75vh, 67% !important;
-  animation-duration: 0.5s;
-
-  animation-duration: infinite;
+  margin-top: 52px;
 }
 
-.cover {
-  animation-duration: 0.5s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    transform: translate(0, 50vh) scale(0.1, 1);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate(0, 10) scale(1, 1);
-    opacity: 1;
-  }
-}
-@keyframes sparkle {
-  from {
-    transform: translate(2vh, 3vh);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate(-2vh, -3vh);
-    opacity: 1;
-  }
-}
 .tag {
   background: #000;
   color: #fff;

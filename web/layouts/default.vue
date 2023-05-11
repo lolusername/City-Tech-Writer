@@ -12,9 +12,9 @@ import Navbar from '~/components/Navbar.vue'
 
 export default {
   components: {
-    Navbar,
+    Navbar
     // Footer
-  },
+  }
 }
 </script>
 
@@ -30,7 +30,7 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: var(--color-white);
+  background: var(--color-black);
   color: var(--color-black);
   margin: 0;
 }
