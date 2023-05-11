@@ -5,7 +5,7 @@
     </header>
     <section class="container">
       <div
-        v-for="(doc, i) in sortedDocs"
+        v-for="(doc, i) in prose"
         :key="i"
         class="row m-0 py-2"
         :class="{ 'justify-content-end': !(i % 2) }"
@@ -94,7 +94,7 @@ import BlockContent from 'sanity-blocks-vue-component'
 
 const builder = imageUrlBuilder(sanityClient)
 
-const proseQuery = slug => {
+const query = slug => {
   return `
     *[volume  == "${slug}"] {
       ...,
@@ -104,16 +104,6 @@ const proseQuery = slug => {
 `
 }
 
-const imageGalleryQuery = volume => {
-  return `
-  {
-    "imageGalleries": *[_type in ["imageGallery"]  && volume == '${volume}'] | order(order asc) {
-      ...,
-      authors[]->
-    }
-  }
-`
-}
 const issueInfoQuery = `
   {
     "issueInfo": *[_type in ["issueInfo"]]
@@ -137,19 +127,12 @@ export default {
     console.log(route)
     const slug = await route.params.slug
 
-    const prose = await sanityClient.fetch(proseQuery(slug))
-    const imageGalleries = await sanityClient.fetch(imageGalleryQuery(slug))
+    const prose = await sanityClient.fetch(query(slug))
+    // const imageGalleries = await sanityClient.fetch(imageGalleryQuery(slug))
 
-    return { prose, ...imageGalleries, ...issueInfo, slug }
+    return { prose, ...issueInfo, slug }
   },
 
-  computed: {
-    sortedDocs() {
-      const sortedDocs = [...this.prose]
-      sortedDocs.splice(25, 0, ...this.imageGalleries)
-      return sortedDocs
-    }
-  },
   methods: {
     getTitleForValue(value) {
       const tagOptions = [
