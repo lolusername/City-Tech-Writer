@@ -48,7 +48,9 @@
 video {
   margin-bottom: 0.75rem;
 }
-
+.text-black {
+  color: var(--color-black);
+}
 body {
   background: var(--color-black);
 }

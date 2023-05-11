@@ -35,7 +35,7 @@ export default {
 header {
   font-family: gopher, adobe-garamond-pro, serif;
 }
-.header {
+header {
   padding: 0.5rem;
   /* max-width: 60em; */
   box-sizing: border-box;

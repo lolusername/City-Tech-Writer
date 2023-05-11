@@ -1,5 +1,5 @@
 <template>
-  <section class="container work">
+  <section class="container work text-white">
     <h1 class="title">{{ title }}</h1>
     <h4 class="text-center">by</h4>
     <h4 class="text-center" v-for="(author, i) in authors" :key="i">
@@ -36,7 +36,7 @@ import youtube from '../../components/youtube.vue'
 import AutoPlayVid from '../../components/AutoPlayVid.vue'
 
 import '@recogito/recogito-js/dist/recogito.min.css'
-const query = (slug) => {
+const query = slug => {
   console.log(slug)
   return `
 
@@ -62,10 +62,10 @@ export default {
           mainImage: mainImage,
           youtubeLink: youtube,
           longLineBreak: longLineBreak,
-          vid: AutoPlayVid,
+          vid: AutoPlayVid
         },
-        marks: { pull_quote: pull_quote },
-      },
+        marks: { pull_quote: pull_quote }
+      }
     }
   },
   async asyncData({ route }) {
@@ -75,22 +75,22 @@ export default {
     return a[0]
   },
   computed: {
-    sessionsWithoutBreak: (data) => {
+    sessionsWithoutBreak: data => {
       if (data.program && data.program.schedule) {
         return data.program.schedule.filter(
-          (i) => i.session.sessionType !== 'break'
+          i => i.session.sessionType !== 'break'
         )
       }
-    },
+    }
   },
   mounted() {
     var r = Recogito.init({
-      content: document.getElementById('my-content'), // ID or DOM element
+      content: document.getElementById('my-content') // ID or DOM element
     })
-    r.on('createAnnotation', function (annotation) {
+    r.on('createAnnotation', function(annotation) {
       console.log(annotation)
     })
-  },
+  }
 }
 </script>
 

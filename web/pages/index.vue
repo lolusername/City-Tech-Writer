@@ -116,7 +116,7 @@ const proseQuery = `
 `
 const imageGalleryQuery = `
   {
-    "imageGalleries": *[_type in ["imageGallery"]  && volume == 'v17'] | order(order asc) {
+    "imageGalleries": *[_type in ["imageGallery"]  && volume == 'v18'] | order(order asc) {
       ...,
       authors[]->
     }
@@ -236,30 +236,29 @@ export default {
 .volume::after {
   content: ' ';
   display: block;
-  background: #214971;
+  background: #d95525;
   border-radius: 100px;
   width: 75%;
   height: 5px;
 }
 .issue-info {
-  background: #fafafa;
+  color: #fafafa;
   margin-top: 3rem;
-  border-radius: 8px;
-  border: 0.1px solid #000;
-  box-shadow: #214971 10px 10px;
-  font-size: 1.39rem;
+
+  border: 2px solid #d91882;
+  box-shadow: #d95525 6px 6px;
+  font-size: 1.5rem;
   font-weight: 100;
   font-style: italic;
 }
 
 .cover {
   height: 478px;
-  background: url(/banner.png);
+  background: url(/banner.png), url(/bg.png);
   background-size: contain !important;
   background-attachment: scroll;
-  background-repeat: repeat;
+  background-repeat: no-repeat, repeat;
   background-position-x: center;
-  transition: background 1s;
   margin-top: 52px;
 }
 

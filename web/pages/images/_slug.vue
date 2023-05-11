@@ -4,9 +4,9 @@
     <div class="d-flex justify-content-center p-2">
       <div class="">
         <h4 class="text-center">by</h4>
-        <h4 class="text-center" v-for="(author, i) in authors" :key="i">
-          {{ author.name }}
-        </h4>
+        <span class="text-center" v-for="(author, i) in authors" :key="i">
+          {{ author.name }}<span v-if="i < authors.length - 1">,</span>
+        </span>
         <h4 class="mt-4">FACULTY SPONSOR(S)</h4>
         <h4>{{ facultySponsor }}</h4>
       </div>
@@ -16,7 +16,7 @@
     <div class="">
       <div class="justify-content-between px-md-5">
         <figure
-          class="h-100 flex-column flex-md-row d-flex align-items-center"
+          class="h-100 flex-column flex-md-row d-flex align-items-center text-black"
           v-for="(img, i) in images"
           :key="i"
           :class="{ fig: i % 2 }"
@@ -37,10 +37,12 @@
         <BlockContent :blocks="description" :serializers="serializers" />
       </div>
     </div>
-    <p class="text-center grid row justify-content-md-center flex">
+    <p
+      class="text-center grid row justify-content-md-center flex bg-white text-black pt-3"
+    >
       Author Bios
     </p>
-    <div class="row p-5">
+    <div class="row p-5 bg-white text-black">
       <article
         class="col col-lg-4 inline-block"
         v-for="author in authors"
@@ -149,15 +151,16 @@ export default {
   text-align: center;
 }
 .container-fluid {
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 0 0;
   box-sizing: border-box;
   min-height: calc(100% - 72px - 216px);
   font-family: adobe-garamond-pro, serif;
   font-size: 1.5rem;
+  color: var(--color-white);
 }
 .title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 .authors {
   font-size: 13px;
