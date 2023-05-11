@@ -48,7 +48,7 @@ header {
   top: 0;
   background-position-x: 300px;
   height: 52px;
-  background: #000;
+  background: var(--color-black);
 
   /* border-radius: 1000px; */
   /* margin-top: 1rem; */

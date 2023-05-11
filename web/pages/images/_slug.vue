@@ -75,7 +75,7 @@ import imageUrlBuilder from '@sanity/image-url'
 
 const builder = imageUrlBuilder(sanityClient)
 
-const query = (slug) => {
+const query = slug => {
   console.log(slug)
   return `
 
@@ -101,9 +101,9 @@ export default {
           youtubeLink: youtube,
 
           longLineBreak: longLineBreak,
-          vid: AutoPlayVid,
-        },
-      },
+          vid: AutoPlayVid
+        }
+      }
     }
   },
   async asyncData({ route }) {
@@ -115,22 +115,22 @@ export default {
   methods: {
     URLbuilder(img) {
       return builder.image(img)
-    },
+    }
   },
   head() {
     return {
-      title: 'City Tech Writer',
+      title: 'City Tech Writer'
     }
   },
   computed: {
-    sessionsWithoutBreak: (data) => {
+    sessionsWithoutBreak: data => {
       if (data.program && data.program.schedule) {
         return data.program.schedule.filter(
-          (i) => i.session.sessionType !== 'break'
+          i => i.session.sessionType !== 'break'
         )
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

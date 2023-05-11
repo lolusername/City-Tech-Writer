@@ -45,6 +45,10 @@
   --width-x-large: 100em;
 }
 
+video {
+  margin-bottom: 0.75rem;
+}
+
 body {
   background: var(--color-black);
 }

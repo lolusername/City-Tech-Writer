@@ -18,12 +18,10 @@
 <script>
 export default {
   props: {
-    vid: {
-      type: String,
-    },
+    vid: {},
     alt: {
-      type: String,
-    },
+      type: String
+    }
   },
   methods: {
     build({ _ref }) {
@@ -32,10 +30,9 @@ export default {
       const fileType = a[2]
 
       return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}`
-    },
-  },
+    }
+  }
 }
 </script>
 
-<style>
-</style>
+<style></style>
