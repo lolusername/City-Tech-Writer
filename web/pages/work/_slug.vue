@@ -134,9 +134,7 @@ a,
   box-sizing: border-box;
 }
 .bio {
-  background: #000;
-  color: #f1f1f1;
-  border-radius: 0.5rem;
-  margin: 2rem 0 3rem 0;
+  background: #fff;
+  color: var(--color-black);
 }
 </style>

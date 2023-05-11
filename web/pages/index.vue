@@ -236,7 +236,7 @@ export default {
     this.sortedDocs.splice(25, 0, ...this.imageGalleries)
   },
   head: {
-    title: 'CITY TECH WRITER Vol. 16 - 2021',
+    title: 'CITY TECH WRITER Vol. 18 - 2023',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
