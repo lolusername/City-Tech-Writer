@@ -105,7 +105,7 @@ const builder = imageUrlBuilder(sanityClient)
 
 const proseQuery = `
   {
-    "prose": *[_type in ["prose"] && volume == 'v17'] | order(order asc) {
+    "prose": *[_type in ["prose"] && volume == 'v18'] | order(order asc) {
       ...,
        authors[]->,
        facultySponsor,
