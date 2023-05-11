@@ -11,7 +11,6 @@
         <h4>{{ facultySponsor }}</h4>
       </div>
     </div>
-    <h4 class="d-flex justify-content-center">Description:</h4>
 
     <div class="">
       <div class="justify-content-between px-md-5">
@@ -22,7 +21,7 @@
           :class="{ fig: i % 2 }"
         >
           <img
-            class="w-100 p-3 col-12 col-md-7"
+            class="w-100 p-3 col-12 col-md-5"
             :src="URLbuilder(img.imageForCaption)"
             :alt="img.caption"
           />

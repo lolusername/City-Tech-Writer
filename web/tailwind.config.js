@@ -10,5 +10,10 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  variants: {
+    extend: {
+      opacity: ['group-hover']
+    }
+  }
 }

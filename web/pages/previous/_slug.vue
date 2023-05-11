@@ -2,18 +2,6 @@
   <div>
     <header id="head" class="container-fluid p-0">
       <div class="cover"></div>
-      <section class="issue-info container mb-5 p-5 p-md-5">
-        <div class="row py-3 d-flex justify-content-center">
-          <article class="col-12 col-md-3">
-            <h1>City Tech Writer</h1>
-            <h4 class="volume">Vol. 18 - 2023</h4>
-            <h6>Outstanding student writing from all disciplines</h6>
-          </article>
-          <article class="col-12 col-md-5">
-            <BlockContent :blocks="issueInfo[0].description" />
-          </article>
-        </div>
-      </section>
     </header>
     <section class="container">
       <div
@@ -53,7 +41,7 @@
                 >
                 <NuxtLink
                   v-if="doc._type == 'imageGallery'"
-                  :to="`images/${getSlug(doc)}`"
+                  :to="`/images/${getSlug(doc)}`"
                   ><h5>{{ doc.title }}</h5></NuxtLink
                 >
 
@@ -98,7 +86,7 @@
 <script>
 import { dateFilter } from 'vue-date-fns'
 
-import sanityClient from '../sanityClient'
+import sanityClient from '~/sanityClient'
 
 import imageUrlBuilder from '@sanity/image-url'
 
@@ -106,25 +94,26 @@ import BlockContent from 'sanity-blocks-vue-component'
 
 const builder = imageUrlBuilder(sanityClient)
 
-const proseQuery = `
-  {
-    "prose": *[_type in ["prose"] && volume == 'v18'] | order(order asc) {
+const proseQuery = slug => {
+  return `
+    *[volume  == "${slug}"] {
       ...,
-       authors[]->,
-       facultySponsor,
-       tags[],
-       slug
+      prose_content,
+      authors[]->
     }
-  }
 `
-const imageGalleryQuery = `
+}
+
+const imageGalleryQuery = volume => {
+  return `
   {
-    "imageGalleries": *[_type in ["imageGallery"]  && volume == 'v18'] | order(order asc) {
+    "imageGalleries": *[_type in ["imageGallery"]  && volume == '${volume}'] | order(order asc) {
       ...,
       authors[]->
     }
   }
 `
+}
 const issueInfoQuery = `
   {
     "issueInfo": *[_type in ["issueInfo"]]
@@ -141,13 +130,19 @@ export default {
     }
   },
   components: { BlockContent },
-  async asyncData() {
-    const prose = await sanityClient.fetch(proseQuery)
-    const imageGalleries = await sanityClient.fetch(imageGalleryQuery)
+  async asyncData({ params, route }) {
     const issueInfo = await sanityClient.fetch(issueInfoQuery)
+    // const slug = params.slug // B
 
-    return { ...prose, ...imageGalleries, ...issueInfo }
+    console.log(route)
+    const slug = await route.params.slug
+
+    const prose = await sanityClient.fetch(proseQuery(slug))
+    const imageGalleries = await sanityClient.fetch(imageGalleryQuery(slug))
+
+    return { prose, ...imageGalleries, ...issueInfo, slug }
   },
+
   computed: {
     sortedDocs() {
       const sortedDocs = [...this.prose]
@@ -225,8 +220,8 @@ export default {
 </script>
 
 <style scoped>
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import '~/styles/custom-media.css';
+@import '~/styles/custom-properties.css';
 @import url('https://use.typekit.net/fmp2wuw.css');
 .container {
   padding: 1.5rem 0;
