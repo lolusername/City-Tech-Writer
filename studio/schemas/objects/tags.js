@@ -26,7 +26,8 @@ export default {
       { title: 'In Translation', value: 'in_translation' },
       { title: 'History', value: 'history' },
       { title: 'Career Development', value: 'career_dev' },
-      { title: 'Short Films', value: 'short_films' }
+      { title: 'Short Films', value: 'short_films' },
+      { title: 'Fashion', value: 'fashion' }
     ]
   }
 }
