@@ -72,14 +72,17 @@
               </div>
             </section>
           </div>
-          <section v-if="doc.tags" class="d-flex justify-content-end">
+          <section
+            v-if="doc.tags"
+            class="d-flex justify-content-end flex space-x-2"
+          >
             <span
               class="d-inline-block d-flex align-items-center mr-2 tag-header bg-[#d95525] text-white px-2 py-1 uppercase font-mono "
             >
               Tags:
             </span>
             <span
-              class="d-inline-block tag bg-[#d91882] text-white px-2 py-1"
+              class="d-inline-block tag bg-[#d91882] text-white px-2 py-1 space-x-2"
               v-for="(tag, i) in doc.tags"
               :key="i"
             >
@@ -230,7 +233,7 @@ export default {
   },
   mounted() {
     this.sortedDocs = this.prose.slice()
-    this.sortedDocs.splice(34, 0, ...this.imageGalleries)
+    this.sortedDocs.splice(25, 0, ...this.imageGalleries)
   },
   head: {
     title: 'CITY TECH WRITER Vol. 16 - 2021',
