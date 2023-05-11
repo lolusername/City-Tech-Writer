@@ -322,6 +322,7 @@ h6 {
   .cover {
     background-position: center center;
     background-color: #214971;
+
     background-size: 134% !important;
   }
   .tag {
