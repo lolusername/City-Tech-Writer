@@ -87,9 +87,16 @@ export default {
     var r = Recogito.init({
       content: document.getElementById('my-content') // ID or DOM element
     })
-    r.on('createAnnotation', function(annotation) {
-      console.log(annotation)
-    })
+
+    // add a vanilla JS event listener for double click
+    document
+      .getElementById('my-content')
+      .addEventListener('dblclick', function() {
+        // logic for creating annotation
+        r.on('createAnnotation', function(annotation) {
+          console.log(annotation)
+        })
+      })
   }
 }
 </script>

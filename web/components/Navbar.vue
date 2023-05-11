@@ -105,7 +105,7 @@ header {
 .thin {
   font-weight: 600 !important;
 }
-.header a {
+.header a a {
   display: block;
   color: inherit;
   text-decoration: inherit;
