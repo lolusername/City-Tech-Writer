@@ -34,6 +34,7 @@ export default {
 @import url('https://use.typekit.net/rbh5reg.css');
 header {
   font-family: gopher, adobe-garamond-pro, serif;
+  /* font-family: 'bc-figural-petit', sans-serif; */
 }
 header {
   padding: 0.5rem;

@@ -49,7 +49,7 @@
             >
               <div>
                 <a v-if="doc._type == 'prose'" :href="`work/${getSlug(doc)}`"
-                  ><h5>{{ doc.title }}</h5></a
+                  ><h5 class="hover:text-[#d91882]">{{ doc.title }}</h5></a
                 >
                 <NuxtLink
                   v-if="doc._type == 'imageGallery'"
@@ -74,16 +74,16 @@
           </div>
           <section v-if="doc.tags" class="d-flex justify-content-end">
             <span
-              class="d-inline-block d-flex align-items-center mr-2 tag-header"
+              class="d-inline-block d-flex align-items-center mr-2 tag-header bg-[#d95525] text-white px-2 py-1 uppercase font-mono "
             >
               Tags:
             </span>
             <span
-              class="d-inline-block tag"
+              class="d-inline-block tag bg-[#d91882] text-white px-2 py-1"
               v-for="(tag, i) in doc.tags"
               :key="i"
             >
-              {{ mapTag(tag) }}
+              {{ getTitleForValue(tag) }}
             </span>
           </section>
         </div>
@@ -109,7 +109,7 @@ const proseQuery = `
       ...,
        authors[]->,
        facultySponsor,
-       tags,
+       tags[],
        slug
     }
   }
@@ -147,6 +147,34 @@ export default {
     return { ...prose, ...imageGalleries, ...issueInfo }
   },
   methods: {
+    getTitleForValue(value) {
+      const tagOptions = [
+        { title: 'Personal narratives', value: 'personal_narratives' },
+        { title: 'Fiction', value: 'fiction' },
+        { title: 'literary analysis', value: 'literary_analysis' },
+        { title: 'Art and architectural criticism ', value: 'art_crit' },
+        { title: 'Philosophy ', value: 'philosophy' },
+        {
+          title: 'Reflections On Healthcare ',
+          value: 'reflections_healthcare'
+        },
+        { title: 'Technology: Past, Present, Future', value: 'tech' },
+        { title: 'Sociological Inquiry', value: 'soc' },
+        { title: 'Science and Biology', value: 'sci_bi' },
+        { title: 'Photography', value: 'photo' },
+        { title: 'poetry', value: 'poetry' },
+        { title: 'Mathematics', value: 'math' },
+        { title: 'Stage Writing', value: 'stage_writing' },
+        { title: 'In Translation', value: 'in_translation' },
+        { title: 'History', value: 'history' },
+        { title: 'Career Development', value: 'career_dev' },
+        { title: 'Short Films', value: 'short_films' },
+        { title: 'Fashion', value: 'fashion' }
+      ]
+
+      const option = tagOptions.find(option => option.value === value)
+      return option ? option.title : null
+    },
     getSlug(doc) {
       return doc.slug ? doc.slug.current : ''
     },
@@ -262,13 +290,6 @@ export default {
   margin-top: 52px;
 }
 
-.tag {
-  background: #000;
-  color: #fff;
-  margin: 0 0.25rem;
-  padding: 0.25rem;
-  text-transform: capitalize;
-}
 .tag-header {
   font-weight: 700;
 }
