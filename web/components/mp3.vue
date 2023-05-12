@@ -34,29 +34,21 @@ export default {
       const fileType = a[2]
 
       return `https://cdn.sanity.io/files/vnoqhn6d/production/${id}.${fileType}`
-    },
+    }
   },
   props: {
     mp3: {
       mp3: String,
-      default: () => '',
+      default: () => ''
     },
     mp3Name: {
       mp3: String,
-      default: () => '',
-    },
-  },
+      default: () => ''
+    }
+  }
 }
 </script>
 <style>
-a {
-  color: #000;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  color: #000;
-}
 .mp3-link {
   font-style: italic;
 }

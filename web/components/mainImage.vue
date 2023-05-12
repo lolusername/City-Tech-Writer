@@ -19,35 +19,38 @@ export default {
   },
   methods: {
     getURL(imgObject) {
-      return builder.image(imgObject).width(1660).url()
-    },
+      return builder
+        .image(imgObject)
+        .width(1660)
+        .url()
+    }
   },
   props: {
     alt: {
       alt: String,
-      default: () => '',
+      default: () => ''
     },
     asset: {
       asset: Object,
-      default: () => '',
+      default: () => ''
     },
     caption: {
       caption: String,
-      default: () => '',
-    },
-  },
+      default: () => ''
+    }
+  }
 }
 </script>
 <style>
 @import url('https://use.typekit.net/rbh5reg.css');
 a {
-  color: #000;
-  text-decoration: none;
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #000;
+  text-decoration: none;
+  color: #fff;
 }
 .inline-image figcaption {
   font-family: gopher;

@@ -3,36 +3,7 @@
     <nuxt-link to="/" :class="{ thin: $route.path == '/' }" class="home">{{
       title
     }}</nuxt-link>
-    <div class="relative group inline-block">
-      <nuxt-link
-        to="/previous"
-        :class="{ thin: $route.path == '/previous' }"
-        class="home px-3 hidden"
-      >
-        previous
-      </nuxt-link>
-      <div
-        class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white text-black ring-1 ring-black ring-opacity-5 transition ease-in-out duration-150 opacity-0 group-hover:opacity-100"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="options-menu"
-      >
-        <nuxt-link
-          to="/previous/v16"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          role="menuitem"
-        >
-          Volume 16
-        </nuxt-link>
-        <nuxt-link
-          to="/previous/v17"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          role="menuitem"
-        >
-          Volume 17
-        </nuxt-link>
-      </div>
-    </div>
+    <div class="relative group inline-block"></div>
     <nav></nav>
   </header>
 </template>
