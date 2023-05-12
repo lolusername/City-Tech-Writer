@@ -7,7 +7,7 @@
       <nuxt-link
         to="/previous"
         :class="{ thin: $route.path == '/previous' }"
-        class="home px-3"
+        class="home px-3 hidden"
       >
         previous
       </nuxt-link>
